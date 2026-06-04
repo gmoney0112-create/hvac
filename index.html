@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lone Star HVAC | San Antonio's Trusted Heating &amp; Cooling Experts</title>
+<meta name="description" content="Professional HVAC repair, installation, and maintenance in San Antonio. Licensed, insured, NATE-certified technicians. 24/7 emergency service. Free estimates &mdash; satisfaction guaranteed.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lone Star HVAC | San Antonio Heating &amp; Cooling">
+<meta property="og:description" content="San Antonio's trusted HVAC service. Licensed, NATE-certified, satisfaction guaranteed. Book online in minutes.">
+<meta property="og:url" content="https://gmoney0112-create.github.io/hvac/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2744;</text></svg>">
+<link rel="canonical" href="https://gmoney0112-create.github.io/hvac/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org","@type":"LocalBusiness",
+  "@id":"https://gmoney0112-create.github.io/hvac/",
+  "name":"Lone Star HVAC",
+  "description":"Professional HVAC repair, installation, and maintenance in San Antonio, TX. Licensed, insured, NATE-certified technicians. 24/7 emergency service.",
+  "telephone":"YOUR_PHONE_NUMBER",
+  "email":"YOUR_EMAIL_ADDRESS",
+  "url":"https://gmoney0112-create.github.io/hvac/",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","addressLocality":"San Antonio","addressRegion":"TX","addressCountry":"US"},
+  "areaServed":[{"@type":"City","name":"San Antonio"},{"@type":"Neighborhood","name":"Stone Oak"},{"@type":"Neighborhood","name":"Alamo Heights"},{"@type":"Neighborhood","name":"Shavano Park"},{"@type":"Neighborhood","name":"Helotes"},{"@type":"Neighborhood","name":"Northwest Side"},{"@type":"Neighborhood","name":"Medical Center"},{"@type":"Neighborhood","name":"Downtown San Antonio"}],
+  "openingHours":["Mo-Fr 07:00-18:00","Sa 08:00-15:00"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"214"}
+}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0a1628;--navy-mid:#152244;--navy-light:#1e3257;
+  --gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,.12);
+  --cream:#f8f4ef;--cream-dark:#ede7de;--white:#fff;
+  --text-dark:#1a1a2e;--text-mid:#4a4a6a;--text-light:#8a8aaa;
+  --border:rgba(13,43,62,.12);--shadow:0 12px 40px rgba(10,22,40,.10);
+  --r:12px;--r-lg:18px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.85rem 5%;background:rgba(10,22,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.15);}
+.logo{display:flex;flex-direction:column;line-height:1.15;}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--white);letter-spacing:.02em;}
+.logo-name span{color:var(--gold);}
+.logo-sub{font-size:.58rem;font-weight:500;color:rgba(255,255,255,.45);letter-spacing:.2em;text-transform:uppercase;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.75);font-size:.84rem;letter-spacing:.03em;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:.9rem;}
+.nav-phone{font-size:.82rem;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:.4rem;transition:color .2s;}
+.nav-phone:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);padding:.5rem 1.3rem;border-radius:50px;font-weight:600;font-size:.84rem;border:none;cursor:pointer;transition:background .2s;}
+.nav-cta:hover{background:var(--gold-light);}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.ham span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);z-index:190;flex-direction:column;padding:5rem 8% 3rem;gap:0;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a,.mobile-nav button{color:var(--white);font-size:1.25rem;font-weight:300;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.08);background:none;border-top:none;border-left:none;border-right:none;text-align:left;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color .2s;}
+.mobile-nav a:hover,.mobile-nav button:hover{color:var(--gold);}
+.mob-book-btn{margin-top:1.5rem;background:var(--gold)!important;color:var(--navy)!important;padding:1rem 2rem!important;border-radius:50px!important;text-align:center!important;font-weight:600!important;border:none!important;}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:.9rem 2rem;border-radius:50px;font-weight:600;border:none;cursor:pointer;transition:all .2s;font-size:.95rem;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:.9rem 2rem;border-radius:50px;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;transition:all .2s;font-size:.95rem;}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(160deg,#061420 0%,var(--navy) 55%,#0d2035 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:4rem;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(201,168,76,.08),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(91,164,207,.07),transparent 60%);}
+.hero-content{position:relative;z-index:2;padding:5rem 5% 4rem;max-width:860px;margin:0 auto;width:100%;text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:.4rem 1.1rem;border-radius:50px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.6rem;}
+.hero-badge::before{content:'\2726 ';font-size:.6rem;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,7vw,5.8rem);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:1.4rem;letter-spacing:-.01em;}
+h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.8;max-width:540px;margin:0 auto 2.5rem;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2rem;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:center;margin-bottom:2.5rem;}
+.trust-item{font-size:.8rem;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:.35rem;}
+.trust-item::before{content:'\2713 ';color:var(--gold);font-weight:700;}
+
+/* STATS */
+.stats-bar{background:var(--white);padding:2.2rem 5%;border-bottom:1px solid var(--cream-dark);}
+.stats-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--navy);line-height:1;}
+.stat-number span{color:var(--gold);}
+.stat-label{font-size:.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem;}
+
+/* SECTIONS */
+.section{padding:5.5rem 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--navy);margin-bottom:.8rem;line-height:1.15;}
+h2 em{font-style:italic;color:var(--gold);}
+.section-desc{color:var(--text-mid);font-size:.97rem;line-height:1.75;max-width:560px;margin-bottom:2.8rem;}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+.service-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--r-lg);padding:2rem;transition:all .25s;display:flex;flex-direction:column;}
+.service-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:rgba(201,168,76,.3);}
+.service-icon{width:52px;height:52px;background:var(--gold-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+.service-card p{font-size:.9rem;color:var(--text-mid);line-height:1.7;flex:1;}
+.service-cta{margin-top:1.4rem;display:inline-flex;align-items:center;gap:.4rem;font-size:.84rem;font-weight:600;color:var(--gold);cursor:pointer;background:none;border:none;padding:0;transition:gap .2s;}
+.service-cta:hover{gap:.7rem;}
+.service-cta::after{content:'\2192 ';}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;}
+.why-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.8rem 1.6rem;text-align:center;}
+.why-icon{font-size:2rem;margin-bottom:.8rem;}
+.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+.why-card p{font-size:.87rem;color:var(--text-mid);line-height:1.65;}
+
+/* HOW IT WORKS */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;}
+.steps-grid::before{content:'';position:absolute;top:2rem;left:calc(33% + 1rem);right:calc(33% + 1rem);height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:.35;}
+.step{text-align:center;position:relative;}
+.step-num{width:52px;height:52px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--navy);margin:0 auto 1.2rem;}
+.step h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+.step p{font-size:.87rem;color:var(--text-mid);line-height:1.65;}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.8rem;}
+.review-stars{color:var(--gold);font-size:.9rem;margin-bottom:.9rem;letter-spacing:.05em;}
+.review-text{font-size:.95rem;color:var(--text-mid);line-height:1.75;font-style:italic;margin-bottom:1.2rem;}
+.review-author{font-size:.83rem;font-weight:600;color:var(--navy);}
+.review-location{font-size:.78rem;color:var(--text-light);}
+
+/* AREAS */
+.areas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.area-link{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;font-size:.9rem;font-weight:500;color:var(--navy);transition:all .2s;}
+.area-link:hover{border-color:var(--gold);color:var(--gold);transform:translateX(4px);}
+.area-link::after{content:'\2192 ';color:var(--gold);opacity:0;transition:opacity .2s;}
+.area-link:hover::after{opacity:1;}
+
+/* EMERGENCY BANNER */
+.emergency-banner{background:linear-gradient(135deg,#c0392b,#a93226);padding:1rem 5%;text-align:center;}
+.emergency-banner p{color:var(--white);font-size:.9rem;font-weight:500;}
+.emergency-banner a{color:var(--gold-light);font-weight:700;text-decoration:underline;}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:5rem 5%;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,.1),transparent 60%);}
+.cta-section h2{color:var(--white);position:relative;z-index:1;}
+.cta-section p{color:rgba(255,255,255,.65);max-width:460px;margin:.8rem auto 2.5rem;font-size:.97rem;line-height:1.75;position:relative;z-index:1;}
+.cta-actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;position:relative;z-index:1;}
+.btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:50px;border:2px solid rgba(255,255,255,.35);color:var(--white);font-weight:500;cursor:pointer;background:none;transition:all .2s;font-size:.95rem;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* FOOTER */
+footer{background:#060e1a;padding:4rem 5% 2.5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:1.8rem;}
+.footer-brand .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--white);margin-bottom:.6rem;}
+.footer-brand .footer-logo span{color:var(--gold);}
+.footer-brand p{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:1.2rem;}
+.footer-contact-row{display:flex;flex-direction:column;gap:.4rem;}
+.footer-contact-row a{font-size:.85rem;color:rgba(255,255,255,.55);transition:color .2s;}
+.footer-contact-row a:hover{color:var(--gold);}
+.footer-col h4{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.footer-links a{font-size:.86rem;color:rgba(255,255,255,.55);transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-bottom span{font-size:.78rem;color:rgba(255,255,255,.25);}
+.footer-bottom a{color:rgba(255,255,255,.35);font-size:.78rem;transition:color .2s;}
+.footer-bottom a:hover{color:var(--gold);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,14,26,.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(6px);}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--white);border-radius:20px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5);}
+.modal-header{padding:1.6rem 1.8rem 0;display:flex;align-items:flex-start;justify-content:space-between;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--navy);}
+.modal-sub{font-size:.84rem;color:var(--text-mid);margin-top:.2rem;}
+.modal-close{background:none;border:none;cursor:pointer;color:var(--text-light);font-size:1.5rem;line-height:1;padding:.2rem;}
+.modal-close:hover{color:var(--navy);}
+.progress-bar{display:flex;align-items:center;gap:.4rem;padding:1.2rem 1.8rem .4rem;}
+.prog-step{flex:1;height:4px;border-radius:2px;background:var(--cream-dark);transition:background .3s;}
+.prog-step.active{background:var(--gold);}
+.prog-step.done{background:var(--navy);}
+.prog-label{font-size:.72rem;color:var(--text-light);text-align:center;padding:.3rem 1.8rem 1rem;letter-spacing:.04em;}
+.modal-body{padding:.5rem 1.8rem 1.8rem;}
+.step-panel{display:none;}
+.step-panel.active{display:block;}
+.field-label{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mid);margin-bottom:.5rem;display:block;}
+.field-group{margin-bottom:1.2rem;}
+input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{width:100%;padding:.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:var(--r);font-size:.94rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color .2s;}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+textarea{resize:vertical;min-height:80px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.2rem;}
+.svc-opt{border:2px solid var(--cream-dark);border-radius:var(--r);padding:1rem .8rem;cursor:pointer;text-align:center;transition:all .2s;position:relative;}
+.svc-opt:hover{border-color:rgba(201,168,76,.5);}
+.svc-opt.selected{border-color:var(--gold);background:var(--gold-pale);}
+.svc-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
+.svc-opt-icon{font-size:1.4rem;margin-bottom:.35rem;}
+.svc-opt-name{font-size:.82rem;font-weight:600;color:var(--navy);}
+.svc-opt-price{font-size:.75rem;color:var(--text-light);margin-top:.15rem;}
+.estimate-box{background:var(--gold-pale);border:1px solid rgba(201,168,76,.3);border-radius:var(--r);padding:.9rem 1.1rem;margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center;}
+.estimate-label{font-size:.78rem;font-weight:600;color:var(--text-mid);}
+.estimate-range{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--navy);}
+.modal-actions{display:flex;justify-content:space-between;align-items:center;margin-top:1.4rem;gap:.8rem;}
+.btn-back{background:none;border:1.5px solid var(--cream-dark);color:var(--text-mid);padding:.7rem 1.4rem;border-radius:50px;cursor:pointer;font-size:.9rem;transition:all .2s;}
+.btn-back:hover{border-color:var(--navy);color:var(--navy);}
+.btn-next{background:var(--navy);color:var(--white);padding:.75rem 1.8rem;border-radius:50px;border:none;cursor:pointer;font-weight:600;font-size:.92rem;flex:1;max-width:220px;transition:background .2s;}
+.btn-next:hover{background:var(--navy-light);}
+.btn-next:disabled{opacity:.6;cursor:not-allowed;}
+.error-msg{color:#c0392b;font-size:.8rem;margin-top:.3rem;display:none;}
+.error-msg.show{display:block;}
+.success-state{text-align:center;padding:2rem 1.8rem 2.5rem;display:none;}
+.success-state.show{display:block;}
+.success-icon{font-size:3rem;margin-bottom:1rem;}
+.success-state h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--navy);margin-bottom:.6rem;}
+.success-state p{color:var(--text-mid);line-height:1.7;font-size:.94rem;}
+.honeypot{display:none!important;visibility:hidden;position:absolute;left:-9999px;}
+
+/* MOBILE STICKY BAR */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:.75rem 1rem;z-index:150;gap:.6rem;border-top:1px solid rgba(201,168,76,.2);}
+.sticky-bar a,.sticky-bar button{flex:1;text-align:center;padding:.65rem;border-radius:10px;font-weight:600;font-size:.88rem;border:none;cursor:pointer;}
+.sticky-bar a{background:rgba(255,255,255,.08);color:var(--white);}
+.sticky-bar button{background:var(--gold);color:var(--navy);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .steps-grid{grid-template-columns:1fr;gap:1.5rem;}
+  .steps-grid::before{display:none;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-phone{display:none;}
+  .ham{display:flex;}
+  h1{font-size:clamp(2.8rem,9vw,4rem);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .section{padding:4rem 5%;}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .sticky-bar{display:flex;}
+  body{padding-bottom:60px;}
+}
+@media(max-width:480px){
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .modal{border-radius:16px 16px 0 0;position:fixed;bottom:0;max-height:92vh;}
+  .modal-overlay{align-items:flex-end;padding:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- EMERGENCY BANNER -->
+<div class="emergency-banner">
+  <p>&#x26A0;&#xFE0F; AC or heater down? We offer <strong>24/7 emergency service</strong> &mdash; <a href="tel:YOUR_PHONE_NUMBER">call us now</a>.</p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="logo">
+    <span class="logo-name">Lone <span>Star</span> HVAC</span>
+    <span class="logo-sub">Heating &amp; Cooling</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:YOUR_PHONE_NUMBER" class="nav-phone" onclick="gtag('event','call_click',{event_category:'engagement',event_label:'nav'});">&#x260E; YOUR_PHONE</a>
+    <button class="nav-cta" onclick="openModal()">&#x2744; Free Estimate</button>
+    <button class="ham" id="hamBtn" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeNav()">Services</a>
+  <a href="#why" onclick="closeNav()">Why Us</a>
+  <a href="#reviews" onclick="closeNav()">Reviews</a>
+  <a href="#areas" onclick="closeNav()">Service Areas</a>
+  <a href="faq.html">FAQ</a>
+  <a href="tel:YOUR_PHONE_NUMBER" onclick="gtag('event','call_click',{event_category:'engagement',event_label:'mobile_nav'});">&#x260E; Call for Emergency Service</a>
+  <button class="mob-book-btn" onclick="closeNav();openModal();">&#x2744; Get a Free Estimate</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-badge">San Antonio&rsquo;s Premier HVAC Service</div>
+    <h1>Your Comfort,<br><em>Restored</em><br>Fast.</h1>
+    <p class="hero-sub">Lone Star HVAC delivers fast, reliable heating and cooling repair, installation, and maintenance to San Antonio homes and businesses. NATE-certified, licensed, and guaranteed to get it right the first time.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="openModal()">&#x2744; Get a Free Estimate</button>
+      <a href="#services" class="btn-secondary">View Services &#x2192;</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item">Licensed &amp; Insured</span>
+      <span class="trust-item">NATE-Certified Technicians</span>
+      <span class="trust-item">24/7 Emergency Service</span>
+      <span class="trust-item">Satisfaction Guaranteed</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div><div class="stat-number">5<span>K+</span></div><div class="stat-label">Systems Serviced</div></div>
+    <div><div class="stat-number">4.9<span>&#x2605;</span></div><div class="stat-label">Average Rating</div></div>
+    <div><div class="stat-number">20<span>+</span></div><div class="stat-label">Years Serving SA</div></div>
+    <div><div class="stat-number">100<span>%</span></div><div class="stat-label">Satisfaction Guarantee</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-tag">What We Offer</div>
+    <h2>HVAC services <em>built for San Antonio</em></h2>
+    <p class="section-desc">From emergency AC repair during a July heat wave to full system replacements and annual tune-ups &mdash; we handle every job with the same precision and care.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#x2744;</div>
+        <h3>AC Repair &amp; Service</h3>
+        <p>Fast diagnosis and repair for all cooling system brands and models. Most repairs completed same-day. Flat $89 diagnostic fee &mdash; waived when you book the repair.</p>
+        <button class="service-cta" onclick="openModal('ac')">Schedule service</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#x1F525;</div>
+        <h3>Heating Repair &amp; Service</h3>
+        <p>Expert furnace, heat pump, and boiler repair. We diagnose fast and fix it right, so you&rsquo;re not left in the cold. Flat $89 diagnostic fee &mdash; waived on repair.</p>
+        <button class="service-cta" onclick="openModal('heat')">Schedule service</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#x2699;</div>
+        <h3>System Installation</h3>
+        <p>Energy-efficient AC and heating systems installed by certified technicians. We carry all major brands. Free, no-pressure estimates. Financing available. Starting at $2,500.</p>
+        <button class="service-cta" onclick="openModal('install')">Get a free quote</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#x1F6E1;</div>
+        <h3>Preventive Maintenance</h3>
+        <p>Annual and bi-annual tune-ups keep your system running efficiently, extend its life, and catch small problems before they become big ones. Starting at $99 per visit.</p>
+        <button class="service-cta" onclick="openModal('maintenance')">Book a tune-up</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#x1F3E2;</div>
+        <h3>Commercial HVAC</h3>
+        <p>Offices, restaurants, retail, and industrial spaces. We design, install, and maintain commercial systems scheduled around your business hours.</p>
+        <button class="service-cta" onclick="openModal('commercial')">Get a quote</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#x1F4A8;</div>
+        <h3>Indoor Air Quality</h3>
+        <p>Air quality testing, duct cleaning, UV purifiers, and whole-home filtration upgrades. Breathe cleaner, healthier air every day.</p>
+        <button class="service-cta" onclick="openModal('maintenance')">Learn more</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-tag">Why Lone Star HVAC</div>
+    <h2>The difference is in <em>our technicians</em></h2>
+    <p class="section-desc">San Antonio homeowners keep telling us the same thing: they were burned by the last HVAC company they hired. We built Lone Star to be the one you actually keep.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">&#x1F6E1;</div>
+        <h3>Licensed &amp; Insured</h3>
+        <p>State-licensed and fully insured on every job. Your home, your system, and your family are fully protected.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#x2705;</div>
+        <h3>NATE-Certified Technicians</h3>
+        <p>Our techs hold NATE certification &mdash; the HVAC industry&rsquo;s highest standard. That means faster diagnosis and repairs that actually last.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#x23F0;</div>
+        <h3>24/7 Emergency Service</h3>
+        <p>AC dies at midnight in July? We pick up. Emergency HVAC service available around the clock, including weekends and holidays.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#x2B50;</div>
+        <h3>Satisfaction Guarantee</h3>
+        <p>Not happy with the repair? We come back and make it right at no charge. Every time, no questions asked.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#x1F4B0;</div>
+        <h3>Upfront, Honest Pricing</h3>
+        <p>No surprise charges. We give you the full price before any work begins &mdash; every single time. No hidden fees, ever.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">&#x1F4F1;</div>
+        <h3>Same-Day Service</h3>
+        <p>Book before noon and we can often be there the same day. We know HVAC problems in San Antonio heat can&rsquo;t wait.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-tag">The Process</div>
+    <h2>Booked, fixed, <em>comfortable</em></h2>
+    <p class="section-desc">Three simple steps from estimate to a system that works.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Get Your Free Estimate</h3>
+        <p>Tell us about your system and what&rsquo;s happening. We&rsquo;ll give you a transparent price range with no hidden fees and no pressure.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Tech Diagnoses &amp; Quotes</h3>
+        <p>Our certified tech arrives on time, diagnoses the issue, and gets your explicit approval before touching a single component.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Problem Solved, Comfort Restored</h3>
+        <p>We fix it right the first time, backed by our parts and labor warranty &mdash; and our unconditional satisfaction guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-tag">Client Reviews</div>
+    <h2>What San Antonio <em>is saying</em></h2>
+    <p class="section-desc">Real feedback from real homeowners and business owners across San Antonio.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+        <p class="review-text">&ldquo;My AC died on the hottest day of the year. Lone Star had a tech at my house within 3 hours. Fixed it same-day for a fair price. I&rsquo;m a customer for life.&rdquo;</p>
+        <div class="review-author">David K.</div>
+        <div class="review-location">Stone Oak</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+        <p class="review-text">&ldquo;We needed a full system replacement. They gave us three options at different price points, zero pressure, and the installation was flawless. Best HVAC company in SA.&rdquo;</p>
+        <div class="review-author">Maria G.</div>
+        <div class="review-location">Alamo Heights</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+        <p class="review-text">&ldquo;The annual maintenance plan has saved us twice already &mdash; they caught a refrigerant leak before it became a $3,000 problem. Worth every penny.&rdquo;</p>
+        <div class="review-author">Robert H.</div>
+        <div class="review-location">NW San Antonio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="section" id="areas" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-tag">Service Area</div>
+    <h2>Serving all of <em>San Antonio</em></h2>
+    <p class="section-desc">We cover San Antonio and its surrounding communities. Emergency and same-day service available throughout our coverage area.</p>
+    <div class="areas-grid">
+      <a href="#book" class="area-link" onclick="openModal();return false;">Stone Oak</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Alamo Heights</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Shavano Park</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Helotes</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Northwest Side</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Medical Center</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Downtown SA</a>
+      <a href="#book" class="area-link" onclick="openModal();return false;">Anywhere in SA</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="book">
+  <h2>Ready to restore your comfort?</h2>
+  <p>Get your free, no-obligation estimate in under 2 minutes. We confirm within 2 hours &mdash; same-day available.</p>
+  <div class="cta-actions">
+    <button class="btn-primary" onclick="openModal()">&#x2744; Get a Free Estimate</button>
+    <a href="tel:YOUR_PHONE_NUMBER" class="btn-outline" onclick="gtag('event','call_click',{event_category:'engagement',event_label:'cta'});">&#x260E; Call for Emergency Service</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Lone <span>Star</span> HVAC</div>
+        <p>Professional HVAC repair, installation, and maintenance in San Antonio, TX. Licensed, insured, NATE-certified, and satisfaction-guaranteed.</p>
+        <div class="footer-contact-row">
+          <a href="tel:YOUR_PHONE_NUMBER" onclick="gtag('event','call_click',{event_category:'engagement',event_label:'footer'});">&#x260E; YOUR_PHONE</a>
+          <a href="mailto:YOUR_EMAIL">&#x2709; YOUR_EMAIL</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services" onclick="openModal('ac');return false;">AC Repair</a></li>
+          <li><a href="#services" onclick="openModal('heat');return false;">Heating Repair</a></li>
+          <li><a href="#services" onclick="openModal('install');return false;">System Installation</a></li>
+          <li><a href="#services" onclick="openModal('maintenance');return false;">Maintenance Plans</a></li>
+          <li><a href="#services" onclick="openModal('commercial');return false;">Commercial HVAC</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#book" onclick="openModal();return false;">Get a Free Estimate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul class="footer-links">
+          <li><a href="#areas">Stone Oak</a></li>
+          <li><a href="#areas">Alamo Heights</a></li>
+          <li><a href="#areas">Shavano Park</a></li>
+          <li><a href="#areas">Helotes</a></li>
+          <li><a href="#areas">Northwest Side</a></li>
+          <li><a href="#areas">Downtown SA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Lone Star HVAC. All rights reserved.</span>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="sticky-bar">
+  <a href="tel:YOUR_PHONE_NUMBER" onclick="gtag('event','call_click',{event_category:'engagement',event_label:'sticky'});">&#x260E; Emergency Call</a>
+  <button onclick="openModal()">&#x2744; Free Estimate</button>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div id="bookingForm">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">Get Your Free Estimate</div>
+          <div class="modal-sub">No obligation &mdash; we&rsquo;ll confirm within 2 hours</div>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="progress-bar" id="progressBar">
+        <div class="prog-step active" id="prog1"></div>
+        <div class="prog-step" id="prog2"></div>
+        <div class="prog-step" id="prog3"></div>
+      </div>
+      <div class="prog-label" id="progLabel">Step 1 of 3 &mdash; Select Your Service</div>
+      <div class="modal-body">
+
+        <!-- STEP 1 -->
+        <div class="step-panel active" id="step1">
+          <div class="field-group">
+            <span class="field-label">Select a service</span>
+            <div class="svc-grid">
+              <label class="svc-opt selected" id="svc-ac">
+                <input type="radio" name="svc" value="ac" checked>
+                <div class="svc-opt-icon">&#x2744;</div>
+                <div class="svc-opt-name">AC Repair</div>
+                <div class="svc-opt-price">$89 Diagnostic</div>
+              </label>
+              <label class="svc-opt" id="svc-heat">
+                <input type="radio" name="svc" value="heat">
+                <div class="svc-opt-icon">&#x1F525;</div>
+                <div class="svc-opt-name">Heating Repair</div>
+                <div class="svc-opt-price">$89 Diagnostic</div>
+              </label>
+              <label class="svc-opt" id="svc-install">
+                <input type="radio" name="svc" value="install">
+                <div class="svc-opt-icon">&#x2699;</div>
+                <div class="svc-opt-name">Installation</div>
+                <div class="svc-opt-price">Free Estimate</div>
+              </label>
+              <label class="svc-opt" id="svc-maintenance">
+                <input type="radio" name="svc" value="maintenance">
+                <div class="svc-opt-icon">&#x1F6E1;</div>
+                <div class="svc-opt-name">Maintenance</div>
+                <div class="svc-opt-price">From $99</div>
+              </label>
+              <label class="svc-opt" id="svc-commercial" style="grid-column:span 2;">
+                <input type="radio" name="svc" value="commercial">
+                <div class="svc-opt-icon">&#x1F3E2;</div>
+                <div class="svc-opt-name">Commercial HVAC</div>
+                <div class="svc-opt-price">Custom Quote</div>
+              </label>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="field-group">
+              <label class="field-label" for="systemSize">System Size</label>
+              <select id="systemSize" onchange="updateEstimate()">
+                <option value="1">1&ndash;1.5 Ton (small home)</option>
+                <option value="2" selected>2&ndash;2.5 Ton (average home)</option>
+                <option value="3">3&ndash;3.5 Ton (larger home)</option>
+                <option value="4">4&ndash;5 Ton (large / commercial)</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="urgency">Urgency</label>
+              <select id="urgency" onchange="updateEstimate()">
+                <option value="standard">Standard Schedule</option>
+                <option value="sameday">Same-Day (+$49)</option>
+                <option value="emergency">Emergency 24/7 (+$99)</option>
+              </select>
+            </div>
+          </div>
+          <div class="estimate-box">
+            <span class="estimate-label">Estimated Price Range</span>
+            <span class="estimate-range" id="estimateDisplay">$175 &ndash; $275</span>
+          </div>
+          <div class="modal-actions">
+            <div></div>
+            <button class="btn-next" onclick="goStep(2)">Continue &#x2192;</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-panel" id="step2">
+          <div class="two-col">
+            <div class="field-group">
+              <label class="field-label" for="prefDate">Preferred Date</label>
+              <input type="date" id="prefDate">
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="prefTime">Preferred Time</label>
+              <select id="prefTime">
+                <option value="Morning (7am-12pm)">Morning (7am&ndash;12pm)</option>
+                <option value="Afternoon (12-5pm)">Afternoon (12&ndash;5pm)</option>
+                <option value="Evening (5-8pm)">Evening (5&ndash;8pm)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="address">Service Address</label>
+            <input type="text" id="address" placeholder="Street address, San Antonio TX">
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="notes">Issue Description (optional)</label>
+            <textarea id="notes" placeholder="Describe what&rsquo;s happening, system brand/model, age of unit..."></textarea>
+          </div>
+          <div class="modal-actions">
+            <button class="btn-back" onclick="goStep(1)">&#x2190; Back</button>
+            <button class="btn-next" onclick="goStep(3)">Continue &#x2192;</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-panel" id="step3">
+          <div class="two-col">
+            <div class="field-group">
+              <label class="field-label" for="firstName">First Name *</label>
+              <input type="text" id="firstName" placeholder="First name">
+              <span class="error-msg" id="errFirst">Please enter your first name.</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="lastName">Last Name *</label>
+              <input type="text" id="lastName" placeholder="Last name">
+              <span class="error-msg" id="errLast">Please enter your last name.</span>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="(210) 000-0000">
+            <span class="error-msg" id="errPhone">Please enter a valid phone number.</span>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="you@example.com">
+            <span class="error-msg" id="errEmail">Please enter a valid email.</span>
+          </div>
+          <input type="text" id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+          <div class="modal-actions">
+            <button class="btn-back" onclick="goStep(2)">&#x2190; Back</button>
+            <button class="btn-next" id="submitBtn" onclick="submitForm(this)">&#x2744; Confirm Request</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- UPSELL: MAINTENANCE PLAN -->
+    <div class="upsell-state" id="upsellState">
+      <div class="upsell-badge">One-Time Offer</div>
+      <div class="upsell-icon">&#x1F6E1;</div>
+      <h3 id="upsellHeading">Protect Your System Year-Round</h3>
+      <p>Lock in a maintenance plan and get priority scheduling, discounts on every repair, and tune-ups that extend your system&rsquo;s life.</p>
+      <div class="upsell-savings">
+        <div class="upsell-big-num" id="upsellPct">20% OFF</div>
+        <div class="upsell-big-label" id="upsellLabel">all parts &amp; repairs</div>
+      </div>
+      <p class="upsell-freq-label">Choose your maintenance plan:</p>
+      <div class="upsell-freq">
+        <button class="upsell-freq-btn" id="freqBasic" onclick="selectPlan('basic')">Basic<br><small>1 tune-up/yr</small></button>
+        <button class="upsell-freq-btn selected" id="freqStandard" onclick="selectPlan('standard')">Standard<br><small>2 tune-ups/yr</small></button>
+        <button class="upsell-freq-btn" id="freqPremium" onclick="selectPlan('premium')">Premium<br><small>2 tune-ups + filters</small></button>
+      </div>
+      <div class="upsell-actions">
+        <button class="btn-upsell-yes" id="upsellYesBtn" onclick="acceptUpsell()">&#x2713;&nbsp; Yes &mdash; Enroll in Standard Plan</button>
+        <button class="btn-upsell-no" onclick="declineUpsell()">No thanks, just the service today</button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-state" id="successState">
+      <div class="success-icon">&#x2744;</div>
+      <h3>You&rsquo;re All Set!</h3>
+      <p id="successMsg">We&rsquo;ll confirm your appointment within 2 hours via phone and text. Our certified tech will arrive on time and get your system running right.</p>
+      <button class="btn-primary" style="margin:1.5rem auto 0;" onclick="closeModal()">&#x2190; Back to Home</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── SERVICE SELECTION ─────────────────────────────────────────────────────────
+var selectedService = 'ac';
+
+function selectSvc(val) {
+  selectedService = val;
+  document.querySelectorAll('.svc-opt').forEach(function(el) { el.classList.remove('selected'); });
+  var target = document.getElementById('svc-' + val);
+  if (target) target.classList.add('selected');
+  updateEstimate();
+}
+
+document.querySelectorAll('.svc-opt').forEach(function(label) {
+  label.addEventListener('click', function() {
+    var radio = this.querySelector('input[type=radio]');
+    if (radio) selectSvc(radio.value);
+  });
+});
+
+// ── ESTIMATE ──────────────────────────────────────────────────────────────────
+function updateEstimate() {
+  var el = document.getElementById('estimateDisplay');
+  if (!el) return;
+  if (selectedService === 'commercial') { el.textContent = 'Custom Quote'; return; }
+  var sizeIdx = parseInt(document.getElementById('systemSize').value) || 2;
+  var urgency = document.getElementById('urgency').value;
+  var urgencyAdd = urgency === 'sameday' ? 49 : urgency === 'emergency' ? 99 : 0;
+  var configs = {
+    ac:          { base: 150, perSize: 60 },
+    heat:        { base: 130, perSize: 55 },
+    install:     { base: 2500, perSize: 650 },
+    maintenance: { base: 99, perSize: 20 }
+  };
+  var cfg = configs[selectedService] || configs.ac;
+  var mid = cfg.base + (sizeIdx - 1) * cfg.perSize + urgencyAdd;
+  var low = Math.round(mid * 0.85 / 25) * 25;
+  var high = Math.round(mid * 1.20 / 25) * 25;
+  el.innerHTML = '$' + low + ' &ndash; $' + high;
+}
+
+// ── NAV ───────────────────────────────────────────────────────────────────────
+function toggleNav() {
+  var nav = document.getElementById('mobileNav');
+  var btn = document.getElementById('hamBtn');
+  var open = nav.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamBtn').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── MODAL ─────────────────────────────────────────────────────────────────────
+function openModal(svc) {
+  if (svc) selectSvc(svc);
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  goStep(1, true);
+  gtag('event', 'booking_open', { event_category: 'booking', service: svc || selectedService });
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successState').classList.remove('show');
+  document.getElementById('bookingForm').style.display = '';
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+// ── STEPS ─────────────────────────────────────────────────────────────────────
+var currentStep = 1;
+function goStep(n, silent) {
+  currentStep = n;
+  [1, 2, 3].forEach(function(i) {
+    document.getElementById('step' + i).classList.toggle('active', i === n);
+    var prog = document.getElementById('prog' + i);
+    prog.classList.toggle('active', i === n);
+    prog.classList.toggle('done', i < n);
+  });
+  var labels = ['Step 1 of 3 — Select Your Service', 'Step 2 of 3 — Schedule & Address', 'Step 3 of 3 — Your Contact Info'];
+  document.getElementById('progLabel').textContent = labels[n - 1];
+  document.getElementById('modal').scrollTop = 0;
+  if (!silent) gtag('event', 'booking_step', { event_category: 'booking', step: n });
+}
+
+// ── VALIDATION ────────────────────────────────────────────────────────────────
+function show(id, showEl) {
+  document.getElementById(id).classList.toggle('show', showEl);
+}
+function validateStep3() {
+  var fn = document.getElementById('firstName').value.trim();
+  var ln = document.getElementById('lastName').value.trim();
+  var ph = document.getElementById('phone').value.trim();
+  var em = document.getElementById('email').value.trim();
+  var ok = true;
+  show('errFirst', !fn);  if (!fn) ok = false;
+  show('errLast', !ln);   if (!ln) ok = false;
+  show('errPhone', ph.replace(/\D/g,'').length < 10); if (ph.replace(/\D/g,'').length < 10) ok = false;
+  show('errEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) ok = false;
+  return ok;
+}
+
+// ── SUBMIT ────────────────────────────────────────────────────────────────────
+var WEBHOOK = 'YOUR_GHL_WEBHOOK_URL_HERE';
+
+function submitForm(btn) {
+  if (document.getElementById('website').value) return;
+  if (!validateStep3()) return;
+  if (btn.disabled) return;
+
+  var svcLabels = { ac: 'AC Repair & Service', heat: 'Heating Repair & Service', install: 'System Installation', maintenance: 'Preventive Maintenance', commercial: 'Commercial HVAC' };
+  var sizeEl = document.getElementById('systemSize');
+  var sizeText = sizeEl ? sizeEl.options[sizeEl.selectedIndex].text : 'Not specified';
+  var urgencyEl = document.getElementById('urgency');
+  var urgencyText = urgencyEl ? urgencyEl.options[urgencyEl.selectedIndex].text : 'Standard';
+  var prefTime = document.getElementById('prefTime').value;
+  var payload = {
+    firstName:      document.getElementById('firstName').value.trim(),
+    lastName:       document.getElementById('lastName').value.trim(),
+    phone:          document.getElementById('phone').value.trim(),
+    email:          document.getElementById('email').value.trim(),
+    serviceType:    svcLabels[selectedService] || selectedService,
+    systemSize:     sizeText,
+    urgency:        urgencyText,
+    preferredDate:  document.getElementById('prefDate').value || 'Flexible',
+    preferredTime:  prefTime,
+    serviceAddress: document.getElementById('address').value.trim() || 'Not provided',
+    issueNotes:     document.getElementById('notes').value.trim() || 'None',
+    estimatedPrice: document.getElementById('estimateDisplay').textContent,
+    service:        svcLabels[selectedService] || selectedService,
+    date:           document.getElementById('prefDate').value || 'Flexible',
+    time:           prefTime,
+    address:        document.getElementById('address').value.trim() || 'Not provided',
+    notes:          document.getElementById('notes').value.trim() || 'None',
+    source:         'website-booking-form',
+    submittedAt:    new Date().toISOString()
+  };
+  var orig = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span> Sending…';
+
+  fetch(WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r;
+  })
+  .then(function() {
+    gtag('event', 'booking_submit', { event_category: 'booking', service: payload.serviceType, value: payload.estimatedPrice });
+    document.getElementById('bookingForm').style.display = 'none';
+    document.getElementById('upsellState').classList.add('show');
+  })
+  .catch(function(err) {
+    console.error('Webhook error:', err);
+    btn.disabled = false;
+    btn.innerHTML = orig;
+    alert('Something went wrong. Please call us directly or try again.');
+  });
+}
+
+// ── MAINTENANCE PLAN UPSELL ───────────────────────────────────────────────────
+var selectedPlan = 'standard';
+var planData = {
+  basic:    { pct: '10% OFF', label: 'all parts & repairs',        heading: 'Basic Plan &mdash; 1 Tune-Up Per Year',     btnText: 'Yes — Enroll in Basic Plan' },
+  standard: { pct: '20% OFF', label: 'all parts & repairs',        heading: 'Standard Plan &mdash; 2 Tune-Ups Per Year', btnText: 'Yes — Enroll in Standard Plan' },
+  premium:  { pct: '25% OFF', label: 'parts, repairs & priority',  heading: 'Premium Plan &mdash; 2 Tune-Ups + Filters', btnText: 'Yes — Enroll in Premium Plan' }
+};
+
+function selectPlan(p) {
+  selectedPlan = p;
+  ['basic','standard','premium'].forEach(function(k) {
+    var cap = k.charAt(0).toUpperCase() + k.slice(1);
+    document.getElementById('freq' + cap).classList.toggle('selected', k === p);
+  });
+  var d = planData[p];
+  document.getElementById('upsellPct').textContent   = d.pct;
+  document.getElementById('upsellLabel').textContent = d.label;
+  document.getElementById('upsellHeading').innerHTML = d.heading;
+  document.getElementById('upsellYesBtn').textContent = '✓  ' + d.btnText;
+}
+
+function acceptUpsell() {
+  var upsellPayload = {
+    firstName:       document.getElementById('firstName').value.trim(),
+    lastName:        document.getElementById('lastName').value.trim(),
+    phone:           document.getElementById('phone').value.trim(),
+    email:           document.getElementById('email').value.trim(),
+    maintenancePlan: selectedPlan,
+    discount:        planData[selectedPlan].pct,
+    source:          'upsell-maintenance-plan',
+    submittedAt:     new Date().toISOString()
+  };
+  fetch(WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(upsellPayload)
+  }).catch(function(e) { console.error('Upsell webhook error:', e); });
+  gtag('event', 'upsell_accept', { event_category: 'booking', plan: selectedPlan });
+  showSuccess('Maintenance plan enrolled! We’ll confirm your first tune-up and plan details within 2 hours. Welcome to worry-free comfort.');
+}
+
+function declineUpsell() {
+  gtag('event', 'upsell_decline', { event_category: 'booking' });
+  showSuccess('We’ll confirm your appointment within 2 hours via phone and text. Our certified tech will arrive on time and get your system running right.');
+}
+
+function showSuccess(msg) {
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successMsg').textContent = msg;
+  document.getElementById('successState').classList.add('show');
+}
+</script>
+
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+.upsell-state { display:none; text-align:center; padding:2rem 1.8rem 2.5rem; }
+.upsell-state.show { display:block; }
+.upsell-badge { display:inline-block; background:var(--gold-pale); border:1px solid rgba(201,168,76,.3); color:var(--gold); font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.3rem .9rem; border-radius:50px; margin-bottom:1rem; }
+.upsell-icon { font-size:2.5rem; margin-bottom:.6rem; }
+.upsell-state h3 { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; color:var(--navy); margin-bottom:.5rem; }
+.upsell-state p { color:var(--text-mid); font-size:.93rem; line-height:1.7; max-width:340px; margin:0 auto .8rem; }
+.upsell-savings { background:var(--gold-pale); border-radius:var(--r); padding:.9rem 1.2rem; margin:.8rem auto 1.4rem; max-width:220px; }
+.upsell-big-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:600; color:var(--navy); line-height:1; }
+.upsell-big-label { font-size:.78rem; color:var(--text-mid); margin-top:.2rem; }
+.upsell-freq-label { font-size:.82rem; font-weight:600; color:var(--text-mid); margin-bottom:.7rem; }
+.upsell-freq { display:flex; gap:.6rem; justify-content:center; margin-bottom:1.4rem; }
+.upsell-freq-btn { flex:1; max-width:110px; padding:.65rem .5rem; border:2px solid var(--cream-dark); border-radius:var(--r); background:var(--white); cursor:pointer; font-size:.82rem; font-weight:600; color:var(--text-mid); line-height:1.4; transition:all .2s; }
+.upsell-freq-btn small { font-weight:400; color:var(--text-light); font-size:.75rem; }
+.upsell-freq-btn.selected { border-color:var(--gold); background:var(--gold-pale); color:var(--navy); }
+.upsell-freq-btn:hover { border-color:rgba(201,168,76,.5); }
+.upsell-actions { display:flex; flex-direction:column; gap:.7rem; align-items:center; }
+.btn-upsell-yes { background:var(--gold); color:var(--navy); padding:.85rem 2rem; border-radius:50px; border:none; font-weight:700; font-size:.95rem; cursor:pointer; width:100%; max-width:340px; transition:background .2s; }
+.btn-upsell-yes:hover { background:var(--gold-light); }
+.btn-upsell-no { background:none; border:none; color:var(--text-light); font-size:.84rem; cursor:pointer; text-decoration:underline; transition:color .2s; }
+.btn-upsell-no:hover { color:var(--text-mid); }
+</style>
+<script>
+document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+  el.addEventListener('click',function(){
+    try{ gtag('event','call_click',{event_category:'engagement',event_label:'tel_link'}); }catch(e){}
+  });
+});
+</script>
+</body>
+</html>
