@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Lone Star HVAC &mdash; San Antonio Heating &amp; Cooling</title>
+<meta name="description" content="Frequently asked questions about HVAC repair, installation, maintenance, pricing, and emergency service in San Antonio.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2744;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0a1628;--navy-mid:#152244;--navy-light:#1e3257;
+  --gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,.12);
+  --cream:#f8f4ef;--cream-dark:#ede7de;--white:#fff;
+  --text-dark:#1a1a2e;--text-mid:#4a4a6a;--text-light:#8a8aaa;
+  --border:rgba(13,43,62,.12);
+  --r:12px;--r-lg:18px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.85rem 5%;background:rgba(10,22,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.15);}
+.logo{display:flex;flex-direction:column;line-height:1.15;}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--white);}
+.logo-name span{color:var(--gold);}
+.logo-sub{font-size:.58rem;font-weight:500;color:rgba(255,255,255,.45);letter-spacing:.2em;text-transform:uppercase;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.75);font-size:.84rem;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:.9rem;}
+.nav-phone{font-size:.82rem;color:rgba(255,255,255,.6);transition:color .2s;}
+.nav-phone:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);padding:.5rem 1.3rem;border-radius:50px;font-weight:600;font-size:.84rem;border:none;cursor:pointer;transition:background .2s;}
+.nav-cta:hover{background:var(--gold-light);}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.ham span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);z-index:190;flex-direction:column;padding:5rem 8% 3rem;gap:0;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{color:var(--white);font-size:1.25rem;font-weight:300;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:color .2s;}
+.mobile-nav a:hover{color:var(--gold);}
+
+/* PAGE HERO */
+.page-hero{padding:8rem 5% 4rem;background:linear-gradient(160deg,#061420,var(--navy));text-align:center;}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:300;color:var(--white);margin-bottom:.8rem;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.page-hero p{color:rgba(255,255,255,.6);font-size:.97rem;max-width:480px;margin:0 auto;}
+
+/* FAQ */
+.faq-section{max-width:760px;margin:0 auto;padding:4rem 5% 6rem;}
+.faq-category{margin-bottom:3rem;}
+.faq-cat-label{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.faq-item{border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:.75rem;background:var(--white);overflow:hidden;}
+details summary{padding:1.3rem 1.5rem;font-weight:600;font-size:.97rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+details summary::-webkit-details-marker{display:none;}
+details summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--gold);flex-shrink:0;transition:transform .2s;}
+details[open] summary::after{transform:rotate(45deg);}
+details[open] summary{border-bottom:1px solid var(--border);}
+.faq-answer{padding:1.2rem 1.5rem;color:var(--text-mid);font-size:.93rem;line-height:1.8;}
+.faq-answer p{margin-bottom:.8rem;}
+.faq-answer p:last-child{margin-bottom:0;}
+.faq-answer ul{padding-left:1.2rem;margin:.5rem 0;}
+.faq-answer li{margin-bottom:.4rem;}
+
+/* CTA BOX */
+.faq-cta{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:var(--r-lg);padding:2.5rem;text-align:center;margin:0 5% 4rem;max-width:760px;margin-left:auto;margin-right:auto;}
+.faq-cta h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--white);margin-bottom:.6rem;}
+.faq-cta h3 em{font-style:italic;color:var(--gold);}
+.faq-cta p{color:rgba(255,255,255,.6);margin-bottom:1.5rem;font-size:.93rem;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:.85rem 1.8rem;border-radius:50px;font-weight:600;border:none;cursor:pointer;transition:all .2s;font-size:.92rem;}
+.btn-primary:hover{background:var(--gold-light);}
+
+/* FOOTER */
+footer{background:#060e1a;padding:2.5rem 5%;text-align:center;}
+.footer-bottom{font-size:.78rem;color:rgba(255,255,255,.25);}
+.footer-bottom a{color:rgba(255,255,255,.35);transition:color .2s;}
+.footer-bottom a:hover{color:var(--gold);}
+
+@media(max-width:768px){
+  .nav-links,.nav-phone{display:none;}
+  .ham{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-name">Lone <span>Star</span> HVAC</span>
+    <span class="logo-sub">Heating &amp; Cooling</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:YOUR_PHONE_NUMBER" class="nav-phone">&#x260E; YOUR_PHONE</a>
+    <button class="nav-cta" onclick="window.location='index.html#book'">&#x2744; Free Estimate</button>
+    <button class="ham" id="hamBtn" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html#services" onclick="closeNav()">Services</a>
+  <a href="index.html#why" onclick="closeNav()">Why Us</a>
+  <a href="index.html#reviews" onclick="closeNav()">Reviews</a>
+  <a href="faq.html">FAQ</a>
+  <a href="tel:YOUR_PHONE_NUMBER">&#x260E; Call for Emergency Service</a>
+</div>
+
+<div class="page-hero">
+  <h1>Frequently Asked <em>Questions</em></h1>
+  <p>Everything you need to know about our HVAC services, pricing, and process.</p>
+</div>
+
+<div class="faq-section">
+
+  <div class="faq-category">
+    <div class="faq-cat-label">Pricing &amp; Estimates</div>
+
+    <div class="faq-item">
+      <details>
+        <summary>How much does an AC or heating repair cost?</summary>
+        <div class="faq-answer">
+          <p>We charge a flat $89 diagnostic fee for all repair calls &mdash; this covers the technician's visit, diagnosis, and written estimate. The diagnostic fee is <strong>waived when you proceed with the repair</strong>.</p>
+          <p>Repair costs vary depending on the part and system size, but most residential repairs fall between $150 and $650. We always give you the full price in writing before any work begins &mdash; no surprise charges.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>Are estimates free?</summary>
+        <div class="faq-answer">
+          <p>Yes &mdash; system replacement and installation estimates are always 100% free. For repair calls, there is a flat $89 diagnostic fee (waived if you book the repair with us).</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>Do you offer financing for new systems?</summary>
+        <div class="faq-answer">
+          <p>Yes. We partner with third-party financing providers to offer flexible payment plans on new system installations. Options include 0% interest for 12 months on qualifying purchases. Ask your technician or mention it when you request your estimate.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>Do you charge extra for weekend or evening calls?</summary>
+        <div class="faq-answer">
+          <p>Standard service during business hours (Mon&ndash;Fri 7am&ndash;6pm, Sat 8am&ndash;3pm) is at normal rates. Same-day service adds $49 and true 24/7 emergency service (nights, Sundays, holidays) adds $99 to the visit fee. We always tell you upfront before dispatching.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <div class="faq-cat-label">Scheduling &amp; Response</div>
+
+    <div class="faq-item">
+      <details>
+        <summary>How quickly can you come out?</summary>
+        <div class="faq-answer">
+          <p>For standard service requests, we typically schedule within 1&ndash;2 business days. Same-day service is available if you book before noon. Emergency 24/7 calls are dispatched immediately &mdash; our average response time for emergencies is under 2 hours.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>Do you offer 24/7 emergency service?</summary>
+        <div class="faq-answer">
+          <p>Yes. If your AC fails in July at 10pm or your heater goes out on a cold January night, we answer the phone. Emergency service is available 24 hours a day, 7 days a week, including all holidays. An emergency service fee applies (see pricing above).</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>What are your regular business hours?</summary>
+        <div class="faq-answer">
+          <p>Standard service: Monday&ndash;Friday 7am&ndash;6pm, Saturday 8am&ndash;3pm. Emergency service: 24/7, all year.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <div class="faq-cat-label">AC &amp; Cooling</div>
+
+    <div class="faq-item">
+      <details>
+        <summary>Why is my AC running but not cooling?</summary>
+        <div class="faq-answer">
+          <p>The most common causes are:</p>
+          <ul>
+            <li>Dirty or clogged air filter (check and replace first &mdash; it's free)</li>
+            <li>Low refrigerant (a sign of a leak &mdash; requires a licensed tech)</li>
+            <li>Frozen evaporator coil (often caused by low airflow or refrigerant issues)</li>
+            <li>Failing compressor or capacitor</li>
+            <li>Dirty condenser coils (the outdoor unit)</li>
+          </ul>
+          <p>Our $89 diagnostic will pinpoint the exact cause and we'll quote you before any work begins.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>How often should I replace my air filter?</summary>
+        <div class="faq-answer">
+          <p>For most homes: every 1&ndash;3 months. Homes with pets, allergies, or heavy dust may need monthly changes. A dirty filter is the #1 cause of HVAC inefficiency and early system failure &mdash; it's the easiest and cheapest thing you can do to protect your system.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>When should I repair vs. replace my AC?</summary>
+        <div class="faq-answer">
+          <p>A good rule of thumb: if the repair cost is more than 50% of the cost of a new unit, and the system is over 10 years old, replacement usually makes more financial sense. Modern systems are significantly more energy-efficient, so the savings on electricity often offset the replacement cost within a few years.</p>
+          <p>Our technicians will give you an honest assessment &mdash; we'll tell you what we'd do if it were our own home.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <div class="faq-cat-label">Heating</div>
+
+    <div class="faq-item">
+      <details>
+        <summary>Why won't my heater turn on?</summary>
+        <div class="faq-answer">
+          <p>Common causes include:</p>
+          <ul>
+            <li>Thermostat set incorrectly or batteries dead</li>
+            <li>Tripped circuit breaker</li>
+            <li>Pilot light out (older gas furnaces)</li>
+            <li>Clogged filter reducing airflow and triggering a safety shutoff</li>
+            <li>Ignitor failure or flame sensor issue</li>
+          </ul>
+          <p>Check your thermostat and breaker panel first. If those look fine, give us a call &mdash; we'll diagnose it fast.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>What is the average lifespan of a furnace or heat pump?</summary>
+        <div class="faq-answer">
+          <p>Gas furnaces: 15&ndash;20 years with proper maintenance. Heat pumps: 12&ndash;15 years. Air conditioners: 12&ndash;16 years. Regular tune-ups (once or twice a year) can add years to any system's life and dramatically reduce major repair frequency.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <div class="faq-cat-label">Maintenance Plans</div>
+
+    <div class="faq-item">
+      <details>
+        <summary>What&rsquo;s included in a tune-up?</summary>
+        <div class="faq-answer">
+          <p>A Lone Star HVAC tune-up includes:</p>
+          <ul>
+            <li>Clean and inspect evaporator and condenser coils</li>
+            <li>Check and top off refrigerant levels</li>
+            <li>Inspect and tighten all electrical connections</li>
+            <li>Lubricate all moving parts</li>
+            <li>Test capacitors, contactors, and relays</li>
+            <li>Inspect heat exchanger (for gas systems)</li>
+            <li>Check thermostat calibration</li>
+            <li>Replace standard 1-inch air filter (filter included)</li>
+            <li>Full system performance report</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>How often should my HVAC system be serviced?</summary>
+        <div class="faq-answer">
+          <p>Twice a year is ideal: once in spring to prepare your AC for summer, and once in fall to prepare your heating system for winter. At minimum, once a year. Regular maintenance is the single biggest thing you can do to prevent emergency breakdowns and extend system life.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>What&rsquo;s the difference between your maintenance plans?</summary>
+        <div class="faq-answer">
+          <p><strong>Basic Plan ($99/yr)</strong> &mdash; 1 comprehensive tune-up per year + 10% off all parts and labor on repairs.</p>
+          <p><strong>Standard Plan ($179/yr)</strong> &mdash; 2 tune-ups per year (spring AC + fall heating) + 20% off all parts and labor + priority scheduling.</p>
+          <p><strong>Premium Plan ($249/yr)</strong> &mdash; Everything in Standard + quarterly air filter delivery + 25% off all parts and labor + 24/7 priority emergency dispatch.</p>
+          <p>All plans are cancel-anytime, no contracts.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+</div>
+
+<div class="faq-cta">
+  <h3>Still have questions? <em>We&rsquo;re here.</em></h3>
+  <p>Call us or get a free estimate online &mdash; we confirm within 2 hours.</p>
+  <button class="btn-primary" onclick="window.location='index.html#book'">&#x2744; Get a Free Estimate</button>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Lone Star HVAC. All rights reserved. &nbsp;&bull;&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  var nav = document.getElementById('mobileNav');
+  var btn = document.getElementById('hamBtn');
+  var open = nav.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamBtn').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+var allDetails = document.querySelectorAll('details');
+allDetails.forEach(function(det) {
+  det.addEventListener('toggle', function() {
+    if (this.open) {
+      allDetails.forEach(function(other) {
+        if (other !== det) other.removeAttribute('open');
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
