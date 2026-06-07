@@ -1,54 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request Received | Lone Star HVAC</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2744;</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --navy:#0a1628;--gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,.12);
-  --cream:#f8f4ef;--cream-dark:#ede7de;--white:#fff;
-  --text-mid:#4a4a6a;--r:12px;--r-lg:18px;
-}
-body{font-family:'DM Sans',sans-serif;background:linear-gradient(160deg,#061420,var(--navy));min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased;}
-.card{background:var(--white);border-radius:24px;padding:3rem 2.5rem;max-width:520px;width:100%;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.5);}
-.icon{font-size:4rem;margin-bottom:1.2rem;}
-h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--navy);margin-bottom:.8rem;line-height:1.1;}
-h1 em{font-style:italic;color:var(--gold);}
-p{color:var(--text-mid);line-height:1.75;font-size:.97rem;margin-bottom:1.2rem;}
-.highlight-box{background:var(--gold-pale);border:1px solid rgba(201,168,76,.3);border-radius:var(--r);padding:1rem 1.4rem;margin:1.4rem 0;text-align:left;}
-.highlight-box p{margin:0;font-size:.9rem;}
-.highlight-box strong{color:var(--navy);}
-.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--navy);padding:.85rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;margin-top:.5rem;transition:background .2s;}
-.btn:hover{background:var(--gold-light);}
-.emergency-note{margin-top:1.5rem;font-size:.83rem;color:var(--text-mid);}
-.emergency-note a{color:var(--navy);font-weight:600;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estimate Request Received &mdash; Apex Tile &amp; Remodeling</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --dark:#1a1e26;
+      --dark-deep:#0f1218;
+      --amber:#c98b1c;
+      --amber-light:#e0a830;
+      --white:#ffffff;
+      --ink:#1a1a2e;
+      --muted:rgba(26,30,38,0.70);
+      --border:rgba(255,255,255,0.18);
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 18px;
+      color:var(--ink);
+      background:
+        radial-gradient(1100px 700px at 18% 12%,rgba(201,139,28,0.18),transparent 60%),
+        radial-gradient(900px 520px at 85% 18%,rgba(201,139,28,0.10),transparent 55%),
+        linear-gradient(180deg,var(--dark-deep) 0%,var(--dark) 60%,#1e2430 100%);
+      font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    .wrap{width:100%;max-width:680px;}
+    .card{
+      background:rgba(255,255,255,0.97);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:var(--r);
+      padding:40px 32px;
+      box-shadow:0 28px 70px rgba(0,0,0,0.35);
+      text-align:center;
+    }
+    .mark{
+      width:90px;height:90px;
+      margin:0 auto 20px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--amber-light),var(--amber));
+      box-shadow:0 12px 32px rgba(201,139,28,0.38);
+      font-size:40px;
+    }
+    h1{
+      font-family:'Cormorant Garamond',serif;
+      font-weight:600;
+      margin:0 0 12px;
+      font-size:44px;
+      color:var(--dark);
+      letter-spacing:0.2px;
+    }
+    .tagline{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.25rem;
+      font-weight:300;
+      color:var(--amber);
+      margin-bottom:14px;
+      font-style:italic;
+    }
+    p{
+      margin:0 auto 24px;
+      max-width:500px;
+      line-height:1.7;
+      font-size:16px;
+      color:var(--muted);
+    }
+    .what-next{
+      background:rgba(201,139,28,.08);
+      border:1px solid rgba(201,139,28,.2);
+      border-radius:12px;
+      padding:16px 20px;
+      margin:0 auto 24px;
+      max-width:460px;
+      text-align:left;
+    }
+    .what-next h3{
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--amber);
+      margin-bottom:10px;
+    }
+    .what-next ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .what-next li{
+      font-size:.9rem;
+      color:var(--muted);
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      line-height:1.5;
+    }
+    .what-next li::before{
+      content:'\2713';
+      color:var(--amber);
+      font-weight:700;
+      flex-shrink:0;
+      margin-top:1px;
+    }
+    .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      text-decoration:none;
+      padding:12px 22px;
+      border-radius:50px;
+      font-weight:600;
+      letter-spacing:0.2px;
+      color:var(--white);
+      background:linear-gradient(135deg,var(--dark),var(--dark-deep));
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 12px 34px rgba(0,0,0,0.22);
+      transition:transform .15s ease,box-shadow .15s ease;
+      font-size:.92rem;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 40px rgba(0,0,0,0.28);}
+    .btn-amber{
+      background:linear-gradient(135deg,var(--amber),var(--amber-light));
+      color:var(--white);
+    }
+    .fine{
+      margin-top:20px;
+      font-size:12px;
+      color:rgba(26,30,38,0.45);
+    }
+    .fine a{color:rgba(26,30,38,0.65);}
+    .fine a:hover{color:var(--amber);}
+    @media(max-width:520px){
+      h1{font-size:36px}
+      .card{padding:28px 18px}
+      .mark{width:76px;height:76px;font-size:34px}
+    }
+  </style>
 </head>
 <body>
-<div class="card">
-  <div class="icon">&#x2744;</div>
-  <h1>You&rsquo;re All <em>Set!</em></h1>
-  <p>Your service request has been received. We&rsquo;ll review your details and confirm your appointment within <strong>2 hours</strong> via phone and text.</p>
-  <div class="highlight-box">
-    <p><strong>What happens next:</strong></p>
-    <p>&#x2713; &nbsp;Our dispatch team reviews your request<br>
-       &#x2713; &nbsp;We call and text to confirm your appointment<br>
-       &#x2713; &nbsp;Your certified tech arrives at the scheduled time<br>
-       &#x2713; &nbsp;Full diagnosis and written quote before any work begins</p>
+  <div class="wrap">
+    <div class="card">
+      <div class="mark">&#x1F3D7;</div>
+      <h1>Your Project Request Is In!</h1>
+      <p class="tagline">We&rsquo;ll be in touch within 24 hours.</p>
+      <p>Thank you for reaching out to Apex Tile &amp; Remodeling. Our team has received your estimate request and will contact you to schedule your free on-site visit.</p>
+      <div class="what-next">
+        <h3>What happens next</h3>
+        <ul>
+          <li>We review your project details and call or text you within 24 hours.</li>
+          <li>We schedule a free on-site estimate at a time that works for you.</li>
+          <li>We measure, assess the space, and deliver a detailed written quote.</li>
+          <li>You decide &mdash; no pressure, no obligation.</li>
+        </ul>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-amber" href="index.html">&#x1F3D7; Back to Home</a>
+        <a class="btn" href="tel:+12105550200">&#x260E; (210) 555-0200</a>
+      </div>
+      <div class="fine">
+        Questions? Email <a href="mailto:info@apextileremodeling.com">info@apextileremodeling.com</a>
+      </div>
+    </div>
   </div>
-  <p>Need emergency service right now? Call us directly &mdash; we answer 24/7.</p>
-  <a href="tel:YOUR_PHONE_NUMBER" class="btn">&#x260E; Call for Emergency Service</a>
-  <p class="emergency-note">Or <a href="index.html">return to homepage</a></p>
-</div>
-<script>
-setTimeout(function(){ window.location = 'index.html'; }, 12000);
-</script>
 </body>
 </html>
