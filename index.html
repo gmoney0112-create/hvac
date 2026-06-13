@@ -3,1628 +3,930 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lone Star HVAC | Year-Round Comfort, Guaranteed | San Antonio, TX</title>
-<meta name="description" content="NATE-Certified HVAC Service in San Antonio, TX. 24/7 emergency AC repair & heating. 4.9★ rated, licensed & insured. Call (210) 555-0300.">
+<title>Lone Star HVAC — Year-Round Comfort in San Antonio, TX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
-  --navy-deep:#060e1a;
-  --navy-mid:#0b1a2e;
-  --navy-light:#132740;
-  --blue-dark:#1e40af;
+  --navy-darkest:#060e1a;
+  --navy-dark:#0b1a2e;
+  --navy-mid:#132740;
+  --blue-deep:#1e40af;
   --blue-mid:#3b82f6;
-  --blue-sky:#0ea5e9;
+  --blue-light:#0ea5e9;
   --orange:#f97316;
   --orange-dark:#ea6a0f;
   --bg-light:#eff6ff;
   --text-dark:#1e3a8a;
   --white:#ffffff;
-  --glass-bg:rgba(255,255,255,0.04);
-  --glass-border:rgba(255,255,255,0.08);
+  --z-banner:100;
+  --z-nav:90;
+  --z-modal:200;
 }
-
 html{scroll-behavior:smooth}
-body{font-family:'Lato',sans-serif;background:var(--navy-deep);color:var(--white);overflow-x:hidden}
+body{font-family:'Lato',sans-serif;background:var(--navy-darkest);color:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'EB Garamond',serif}
 
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
 }
 
-/* EMERGENCY BANNER */
+/* ── EMERGENCY BANNER ── */
 #emergency-banner{
-  position:sticky;
-  top:0;
-  z-index:1000;
+  position:sticky;top:0;z-index:var(--z-banner);
   background:var(--orange);
-  background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0.06) 0px,rgba(0,0,0,0.06) 10px,transparent 10px,transparent 20px);
-  color:var(--white);
-  padding:10px 20px;
-  text-align:center;
-  font-family:'Lato',sans-serif;
-  font-size:0.9rem;
-  font-weight:700;
-  letter-spacing:0.02em;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
+  background-image:repeating-linear-gradient(
+    -45deg,transparent,transparent 10px,rgba(0,0,0,.06) 10px,rgba(0,0,0,.06) 20px
+  );
+  padding:.6rem 1rem;
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  font-size:.875rem;font-weight:700;color:var(--white);
 }
-#emergency-banner a{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.5)}
-#emergency-banner a:hover{border-bottom-color:var(--white)}
-.banner-close{background:none;border:none;color:var(--white);cursor:pointer;font-size:1.2rem;margin-left:12px;opacity:0.8;padding:0 4px;line-height:1;transition:opacity .2s}
-.banner-close:hover{opacity:1}
+#emergency-banner a{color:var(--white);text-decoration:underline}
+#close-banner{
+  background:none;border:none;color:var(--white);font-size:1.2rem;
+  cursor:pointer;margin-left:auto;line-height:1;padding:.2rem .4rem;
+  opacity:.8;transition:opacity .2s;
+}
+#close-banner:hover{opacity:1}
 
-/* NAV */
+/* ── NAV ── */
 nav{
-  position:sticky;
-  top:41px;
-  z-index:999;
-  background:var(--navy-mid);
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  padding:0 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:68px;
-  backdrop-filter:blur(12px);
+  position:sticky;top:0;z-index:var(--z-nav);
+  background:var(--navy-dark);
+  padding:.75rem 1.5rem;
+  display:flex;align-items:center;gap:1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  transition:top .3s;
 }
 .nav-logo{
-  font-family:'EB Garamond',serif;
-  font-size:1.5rem;
-  font-weight:400;
-  color:var(--white);
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  letter-spacing:0.01em;
+  font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:400;
+  color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.35rem;
+  white-space:nowrap;
 }
-.nav-logo .star{color:var(--orange);font-size:1.2rem}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
-.nav-links a{
-  color:rgba(255,255,255,0.8);
-  text-decoration:none;
-  font-size:0.875rem;
-  font-weight:400;
-  letter-spacing:0.03em;
-  transition:color .2s;
-}
+.nav-logo .star{color:var(--orange)}
+.nav-links{display:flex;gap:1.5rem;margin-left:auto;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;transition:color .2s}
 .nav-links a:hover{color:var(--white)}
-.nav-right{display:flex;align-items:center;gap:16px}
 .nav-phone{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  color:rgba(255,255,255,0.75);
-  text-decoration:none;
-  font-size:0.875rem;
+  display:flex;align-items:center;gap:.4rem;
+  color:rgba(255,255,255,.8);font-size:.875rem;text-decoration:none;
   transition:color .2s;
 }
 .nav-phone:hover{color:var(--white)}
-.nav-phone svg{width:14px;height:14px;stroke:var(--orange)}
-.btn-nav{
-  background:var(--orange);
-  color:var(--white);
-  border:none;
-  padding:9px 20px;
-  border-radius:6px;
-  font-family:'Lato',sans-serif;
-  font-size:0.875rem;
-  font-weight:700;
-  cursor:pointer;
-  text-decoration:none;
-  transition:background .2s,transform .15s;
-  position:relative;
-  overflow:hidden;
+.btn-orange{
+  background:var(--orange);color:var(--white);border:none;
+  padding:.55rem 1.2rem;border-radius:6px;font-family:'Lato',sans-serif;
+  font-size:.875rem;font-weight:700;cursor:pointer;text-decoration:none;
+  display:inline-block;position:relative;overflow:hidden;transition:background .2s;
 }
-.btn-nav:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.btn-orange::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  transition:left .4s;
+}
+.btn-orange:hover{background:var(--orange-dark)}
+.btn-orange:hover::after{left:140%}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  border:1.5px solid rgba(59,130,246,.6);
+  padding:.55rem 1.2rem;border-radius:6px;font-family:'Lato',sans-serif;
+  font-size:.875rem;font-weight:700;cursor:pointer;text-decoration:none;
+  display:inline-block;transition:border-color .2s,background .2s;
+}
+.btn-ghost:hover{border-color:var(--blue-mid);background:rgba(59,130,246,.1)}
+.hamburger{display:none;background:none;border:none;color:var(--white);cursor:pointer;padding:.4rem}
 
-/* HERO */
-.hero{
+/* ── HERO ── */
+#hero{
   min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  padding:100px 5% 80px;
+  background:var(--navy-darkest);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:6rem 1.5rem 4rem;
 }
 .hero-bg{
-  position:absolute;
-  inset:0;
-  z-index:0;
-  background:linear-gradient(135deg, #0c1a35 0%, #0c1a35 50%, #0f1c2e 100%);
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%,rgba(30,64,175,.55) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 50% at 85% 15%,rgba(249,115,22,.22) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 70% at 80% 80%,rgba(14,165,233,.12) 0%,transparent 60%),
+    var(--navy-darkest);
+  animation:heroBlobs 8s ease-in-out infinite alternate;
 }
-.hero-blob{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(80px);
-  animation:blobFloat 8s ease-in-out infinite;
+@keyframes heroBlobs{
+  0%{
+    background:
+      radial-gradient(ellipse 70% 60% at 20% 50%,rgba(30,64,175,.55) 0%,transparent 70%),
+      radial-gradient(ellipse 50% 50% at 85% 15%,rgba(249,115,22,.22) 0%,transparent 60%),
+      radial-gradient(ellipse 60% 70% at 80% 80%,rgba(14,165,233,.12) 0%,transparent 60%),
+      var(--navy-darkest);
+  }
+  50%{
+    background:
+      radial-gradient(ellipse 80% 70% at 15% 55%,rgba(30,64,175,.6) 0%,transparent 70%),
+      radial-gradient(ellipse 60% 60% at 90% 10%,rgba(249,115,22,.28) 0%,transparent 60%),
+      radial-gradient(ellipse 50% 60% at 75% 85%,rgba(14,165,233,.15) 0%,transparent 60%),
+      var(--navy-darkest);
+  }
+  100%{
+    background:
+      radial-gradient(ellipse 65% 65% at 25% 45%,rgba(30,64,175,.5) 0%,transparent 70%),
+      radial-gradient(ellipse 55% 55% at 80% 20%,rgba(249,115,22,.25) 0%,transparent 60%),
+      radial-gradient(ellipse 70% 65% at 85% 75%,rgba(14,165,233,.13) 0%,transparent 60%),
+      var(--navy-darkest);
+  }
 }
-.hero-blob-1{
-  width:600px;height:600px;
-  background:radial-gradient(circle, rgba(30,64,175,0.35) 0%, transparent 70%);
-  top:-100px;left:-100px;
-  animation-delay:0s;
-}
-.hero-blob-2{
-  width:500px;height:500px;
-  background:radial-gradient(circle, rgba(249,115,22,0.2) 0%, transparent 70%);
-  top:-80px;right:-80px;
-  animation-delay:2s;
-  animation-direction:reverse;
-}
-.hero-blob-3{
-  width:400px;height:400px;
-  background:radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%);
-  bottom:0;left:30%;
-  animation-delay:4s;
-}
-@keyframes blobFloat{
-  0%,100%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(30px,-20px) scale(1.05)}
-  66%{transform:translate(-20px,15px) scale(0.95)}
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  max-width:860px;
-}
+.hero-content{position:relative;z-index:1;max-width:860px}
 .hero-eyebrow{
-  display:inline-block;
-  background:rgba(59,130,246,0.15);
-  border:1px solid rgba(59,130,246,0.3);
-  color:var(--blue-sky);
-  padding:6px 16px;
-  border-radius:100px;
-  font-size:0.78rem;
-  font-weight:700;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  margin-bottom:28px;
-  animation:fadeUp 0.8s ease both;
+  font-family:'Lato',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--blue-light);margin-bottom:1.5rem;
+  opacity:0;animation:fadeUp .7s .1s forwards;
 }
 .hero-h1{
-  font-family:'EB Garamond',serif;
-  font-size:clamp(3rem, 7vw, 5.5rem);
-  font-weight:300;
-  line-height:1.1;
-  color:var(--white);
-  margin-bottom:16px;
-  animation:fadeUp 0.8s 0.15s ease both;
+  font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:1.15;
+  color:var(--white);margin-bottom:1.25rem;
+  opacity:0;animation:fadeUp .7s .25s forwards;
 }
 .hero-h1 em{
   font-style:italic;
-  background:linear-gradient(90deg, var(--blue-mid), var(--orange));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
+  background:linear-gradient(90deg,var(--blue-mid),var(--orange));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .hero-sub{
-  font-size:1.15rem;
-  color:rgba(255,255,255,0.7);
-  margin-bottom:40px;
-  letter-spacing:0.02em;
-  animation:fadeUp 0.8s 0.3s ease both;
+  font-size:1.1rem;color:rgba(255,255,255,.75);margin-bottom:2.5rem;
+  opacity:0;animation:fadeUp .7s .4s forwards;
 }
-.hero-ctas{
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-bottom:48px;
-  animation:fadeUp 0.8s 0.45s ease both;
+.hero-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;
+  opacity:0;animation:fadeUp .7s .55s forwards;
 }
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:var(--orange);
-  color:var(--white);
-  border:none;
-  padding:15px 32px;
-  border-radius:8px;
-  font-family:'Lato',sans-serif;
-  font-size:1rem;
-  font-weight:700;
-  cursor:pointer;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  transition:background .2s,transform .15s,box-shadow .2s;
-  box-shadow:0 4px 24px rgba(249,115,22,0.35);
+.hero-btns .btn-orange{padding:.75rem 1.75rem;font-size:1rem}
+.hero-btns .btn-ghost{padding:.75rem 1.75rem;font-size:1rem}
+.trust-badges{
+  display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;margin-bottom:3.5rem;
+  opacity:0;animation:fadeUp .7s .7s forwards;
 }
-.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 8px 32px rgba(249,115,22,0.5)}
-.btn-primary::after{
-  content:'';
-  position:absolute;
-  top:0;left:-100%;
-  width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
-  transform:skewX(-20deg);
-  transition:left 0.5s;
+.badge{
+  display:flex;align-items:center;gap:.4rem;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  padding:.35rem .9rem;border-radius:999px;font-size:.8rem;font-weight:700;
+  color:rgba(255,255,255,.9);
 }
-.btn-primary:hover::after{left:150%}
-.btn-ghost{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:transparent;
-  color:var(--white);
-  border:1px solid rgba(59,130,246,0.5);
-  padding:15px 32px;
-  border-radius:8px;
-  font-family:'Lato',sans-serif;
-  font-size:1rem;
-  font-weight:700;
-  cursor:pointer;
-  text-decoration:none;
-  transition:border-color .2s,background .2s,transform .15s;
-}
-.btn-ghost:hover{border-color:var(--blue-mid);background:rgba(59,130,246,0.1);transform:translateY(-2px)}
+.badge svg{width:14px;height:14px;flex-shrink:0}
 
-.hero-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
-  animation:fadeUp 0.8s 0.6s ease both;
-  margin-bottom:60px;
-}
-.badge-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.12);
-  color:rgba(255,255,255,0.85);
-  padding:7px 16px;
-  border-radius:100px;
-  font-size:0.8rem;
-  font-weight:700;
-  letter-spacing:0.03em;
-  backdrop-filter:blur(8px);
-}
-
-/* HERO HVAC ICONS */
+/* ── HERO ICONS (snowflake/flame) ── */
 .hero-icons{
-  display:flex;
-  align-items:center;
-  gap:40px;
-  justify-content:center;
-  animation:fadeUp 0.8s 0.75s ease both;
+  display:flex;align-items:center;gap:3rem;justify-content:center;
+  opacity:0;animation:fadeUp .7s .85s forwards;
 }
-.hero-icon-wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-}
-.hero-icon-label{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.5);
-}
-.snowflake-icon{
-  width:48px;height:48px;
-  animation:spinSlow 12s linear infinite;
-  color:var(--blue-sky);
-}
-.flame-icon{
-  width:48px;height:48px;
-  animation:flicker 1.5s ease-in-out infinite alternate;
-  color:var(--orange);
-}
-@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.hero-icon-item{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.hero-icon-item span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.snowflake-svg{animation:spinSlow 8s linear infinite}
+.flame-svg{animation:flicker 1.5s ease-in-out infinite alternate}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
 @keyframes flicker{
-  0%{transform:scale(1) rotate(-2deg);opacity:0.9}
-  50%{transform:scale(1.05) rotate(1deg);opacity:1}
-  100%{transform:scale(0.95) rotate(-1deg);opacity:0.85}
+  0%{transform:scaleY(1) scaleX(1)}
+  30%{transform:scaleY(1.04) scaleX(.97)}
+  60%{transform:scaleY(.97) scaleX(1.02)}
+  100%{transform:scaleY(1.06) scaleX(.96)}
 }
-.hero-divider{
-  width:2px;height:48px;
-  background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.15),transparent);
-}
+
+/* ── SCROLL INDICATOR ── */
 .scroll-indicator{
-  position:absolute;
-  bottom:32px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-  color:rgba(255,255,255,0.3);
-  font-size:0.7rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  color:rgba(255,255,255,.4);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
   animation:bounce 2s ease-in-out infinite;
 }
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-.scroll-indicator svg{width:20px;height:20px;stroke:rgba(255,255,255,0.3)}
+.scroll-indicator svg{width:20px;height:20px}
 
-/* STATS BAR */
-.stats-bar{
-  background:var(--white);
-  padding:28px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  gap:24px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
-}
-.stat-item{
-  text-align:center;
-}
-.stat-number{
-  font-family:'EB Garamond',serif;
-  font-size:2.2rem;
-  font-weight:500;
-  color:var(--navy-mid);
-  line-height:1;
-  display:block;
-}
-.stat-label{
-  font-size:0.78rem;
-  font-weight:700;
-  color:#64748b;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  margin-top:4px;
-}
-.stat-divider{
-  width:1px;height:40px;
-  background:rgba(0,0,0,0.1);
-}
-
-/* SEASONAL PROMO */
-.promo-section{
-  padding:60px 5%;
-  background:var(--white);
-}
-.promo-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-  max-width:1100px;
-  margin:0 auto;
-}
-.promo-card{
-  border-radius:16px;
-  padding:40px;
-  position:relative;
-  overflow:hidden;
-  transition:transform .25s,box-shadow .25s;
-}
-.promo-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.2)}
-.promo-card-cool{
-  background:linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%);
-  color:var(--white);
-}
-.promo-card-warm{
-  background:linear-gradient(135deg, #7c3aed 0%, #f97316 100%);
-  color:var(--white);
-}
-.promo-icon{margin-bottom:20px}
-.promo-icon svg{width:52px;height:52px;opacity:0.9}
-.promo-badge{
-  display:inline-block;
-  background:rgba(255,255,255,0.2);
-  padding:4px 12px;
-  border-radius:100px;
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  margin-bottom:12px;
-}
-.promo-card h3{
-  font-family:'EB Garamond',serif;
-  font-size:1.9rem;
-  font-weight:400;
-  margin-bottom:8px;
-}
-.promo-price{
-  font-size:2.5rem;
-  font-weight:900;
-  letter-spacing:-0.02em;
-  line-height:1;
-  margin-bottom:12px;
-}
-.promo-card p{
-  font-size:0.95rem;
-  opacity:0.85;
-  margin-bottom:28px;
-  line-height:1.5;
-}
-.btn-promo{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:var(--white);
-  color:var(--navy-mid);
-  border:none;
-  padding:12px 24px;
-  border-radius:8px;
-  font-family:'Lato',sans-serif;
-  font-size:0.9rem;
-  font-weight:700;
-  cursor:pointer;
-  text-decoration:none;
-  transition:transform .15s,box-shadow .15s;
-  box-shadow:0 4px 16px rgba(0,0,0,0.15);
-}
-.btn-promo:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
-.btn-promo-orange{
-  background:var(--orange);
-  color:var(--white);
-}
-
-/* SERVICES */
-.services-section{
-  padding:90px 5%;
-  background:var(--navy-mid);
-}
-.section-label{
-  display:inline-block;
-  background:rgba(249,115,22,0.12);
-  border:1px solid rgba(249,115,22,0.25);
-  color:var(--orange);
-  padding:5px 14px;
-  border-radius:100px;
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  margin-bottom:16px;
-}
-.section-title{
-  font-family:'EB Garamond',serif;
-  font-size:clamp(2rem,4vw,3rem);
-  font-weight:300;
-  color:var(--white);
-  margin-bottom:12px;
-  line-height:1.2;
-}
-.section-sub{
-  color:rgba(255,255,255,0.55);
-  font-size:1rem;
-  max-width:560px;
-  line-height:1.6;
-  margin-bottom:52px;
-}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  grid-template-rows:auto auto;
-  gap:20px;
-  max-width:1200px;
-  margin:0 auto;
-}
-.service-card{
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  border-radius:16px;
-  padding:32px;
-  transition:transform .25s,border-color .25s,box-shadow .25s;
-  position:relative;
-  overflow:hidden;
-}
-.service-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:3px;
-  background:transparent;
-  transition:background .25s;
-  border-radius:16px 16px 0 0;
-}
-.service-card:hover{
-  transform:scale(1.02);
-  border-color:rgba(249,115,22,0.3);
-  box-shadow:0 8px 40px rgba(0,0,0,0.3);
-}
-.service-card:hover::before{
-  background:var(--orange);
-}
-.service-card-feature{
-  grid-column:span 2;
-  background:linear-gradient(135deg, rgba(30,64,175,0.3) 0%, rgba(14,165,233,0.15) 100%);
-  border-color:rgba(59,130,246,0.25);
-}
-.service-card-feature:hover::before{background:var(--blue-mid)}
-.service-icon{
-  width:44px;height:44px;
-  margin-bottom:20px;
-  color:var(--blue-sky);
-}
-.service-card-feature .service-icon{color:var(--blue-mid);width:56px;height:56px}
-.service-card h3{
-  font-family:'EB Garamond',serif;
-  font-size:1.4rem;
-  font-weight:400;
-  color:var(--white);
-  margin-bottom:10px;
-}
-.service-card-feature h3{font-size:1.9rem;margin-bottom:14px}
-.service-card p{
-  color:rgba(255,255,255,0.55);
-  font-size:0.875rem;
-  line-height:1.6;
-  margin-bottom:20px;
-}
-.service-link{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  color:var(--orange);
-  text-decoration:none;
-  font-size:0.85rem;
-  font-weight:700;
-  letter-spacing:0.03em;
-  transition:gap .2s;
-}
-.service-link:hover{gap:10px}
-
-/* CERTIFICATIONS */
-.certs-section{
-  padding:70px 5%;
-  background:var(--navy-deep);
-  border-top:1px solid rgba(255,255,255,0.05);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-.certs-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  justify-content:center;
-  max-width:900px;
-  margin:40px auto 0;
-}
-.cert-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  padding:14px 22px;
-  border-radius:12px;
-  transition:border-color .2s,background .2s;
-}
-.cert-badge:hover{
-  border-color:rgba(249,115,22,0.35);
-  background:rgba(249,115,22,0.05);
-}
-.cert-badge-icon{
-  width:32px;height:32px;
-  color:var(--orange);
-  flex-shrink:0;
-}
-.cert-badge-text strong{
-  display:block;
-  font-size:0.875rem;
-  font-weight:700;
-  color:var(--white);
-}
-.cert-badge-text span{
-  font-size:0.75rem;
-  color:rgba(255,255,255,0.45);
-}
-
-/* WHY US */
-.why-section{
-  padding:90px 5%;
-  background:var(--bg-light);
-}
-.why-section .section-label{
-  background:rgba(30,64,175,0.08);
-  border-color:rgba(30,64,175,0.2);
-  color:var(--blue-dark);
-}
-.why-section .section-title{color:var(--navy-mid)}
-.why-section .section-sub{color:#475569}
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  max-width:1100px;
-  margin:0 auto;
-}
-.why-card{
-  background:var(--white);
-  border-radius:12px;
-  padding:28px;
-  border-left:4px solid var(--blue-mid);
-  box-shadow:0 2px 12px rgba(0,0,0,0.06);
-  transition:transform .2s,box-shadow .2s;
-}
-.why-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.1)}
-.why-icon{width:36px;height:36px;color:var(--blue-dark);margin-bottom:16px}
-.why-card h3{font-family:'EB Garamond',serif;font-size:1.25rem;color:var(--navy-mid);margin-bottom:8px;font-weight:500}
-.why-card p{font-size:0.875rem;color:#475569;line-height:1.6}
-
-/* PROCESS */
-.process-section{
-  padding:90px 5%;
-  background:var(--navy-deep);
-}
-.process-steps{
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  gap:0;
-  max-width:900px;
-  margin:60px auto 0;
-  position:relative;
-}
-.process-connector{
-  flex:1;
-  height:2px;
-  border-top:2px dashed rgba(249,115,22,0.3);
-  margin-top:40px;
-  animation:dashDraw 2s linear infinite;
-  background-size:12px 2px;
-}
-@keyframes dashDraw{
-  from{stroke-dashoffset:0}to{stroke-dashoffset:-24px}
-}
-.process-step{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  flex:0 0 200px;
-}
-.process-num{
-  width:72px;height:72px;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--orange),var(--orange-dark));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'EB Garamond',serif;
-  font-size:1.8rem;
-  font-weight:400;
-  color:var(--white);
-  margin-bottom:20px;
-  box-shadow:0 4px 20px rgba(249,115,22,0.4);
-}
-.process-step h3{font-family:'EB Garamond',serif;font-size:1.3rem;color:var(--white);margin-bottom:8px;font-weight:400}
-.process-step p{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.5}
-
-/* REVIEWS */
-.reviews-section{
-  padding:90px 5%;
-  background:var(--navy-mid);
-}
-.reviews-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  max-width:1100px;
-  margin:52px auto 0;
-}
-.review-card{
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  border-radius:16px;
-  padding:32px;
-  transition:transform .25s,border-color .25s;
-}
-.review-card:hover{transform:translateY(-4px);border-color:rgba(249,115,22,0.25)}
-.review-stars{display:flex;gap:4px;margin-bottom:16px}
-.review-stars svg{width:18px;height:18px;fill:var(--orange);stroke:none}
-.review-text{font-size:0.95rem;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:20px;font-style:italic}
-.review-author{font-weight:700;font-size:0.875rem;color:var(--white)}
-.review-location{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:2px}
-
-/* SERVICE AREAS */
-.areas-section{
-  padding:70px 5%;
-  background:var(--bg-light);
-}
-.areas-section .section-title{color:var(--navy-mid)}
-.areas-section .section-label{background:rgba(30,64,175,0.08);border-color:rgba(30,64,175,0.2);color:var(--blue-dark)}
-.areas-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  justify-content:center;
-  max-width:900px;
-  margin:40px auto 0;
-}
-.area-badge{
-  background:var(--white);
-  border:1px solid rgba(30,64,175,0.15);
-  color:var(--navy-mid);
-  padding:10px 20px;
-  border-radius:100px;
-  font-size:0.875rem;
-  font-weight:700;
-  transition:background .2s,border-color .2s,transform .15s;
-  cursor:default;
-}
-.area-badge:hover{
-  background:var(--blue-dark);
-  border-color:var(--blue-dark);
-  color:var(--white);
-  transform:translateY(-2px);
-}
-
-/* FINAL CTA */
-.cta-section{
-  padding:100px 5%;
-  background:var(--navy-mid);
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.cta-section::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse at center, rgba(249,115,22,0.08) 0%, transparent 70%);
-}
-.cta-section .section-title{
-  font-size:clamp(2.2rem,5vw,3.5rem);
-  margin-bottom:16px;
-  position:relative;
-}
-.cta-section .section-sub{position:relative;color:rgba(255,255,255,0.6);margin:0 auto 44px;font-size:1.1rem}
-.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
-
-/* FOOTER */
-footer{
-  background:#060e1a;
-  padding:60px 5% 32px;
-  border-top:1px solid rgba(255,255,255,0.05);
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:48px;
-  margin-bottom:48px;
-}
-.footer-brand-name{
-  font-family:'EB Garamond',serif;
-  font-size:1.5rem;
-  color:var(--white);
-  margin-bottom:12px;
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-.footer-brand-name .star{color:var(--orange)}
-.footer-tagline{font-size:0.875rem;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:20px}
-.footer-certs{display:flex;flex-wrap:wrap;gap:8px}
-.footer-cert-chip{
-  background:rgba(249,115,22,0.1);
-  border:1px solid rgba(249,115,22,0.2);
-  color:rgba(255,255,255,0.7);
-  padding:4px 10px;
-  border-radius:6px;
-  font-size:0.72rem;
-  font-weight:700;
-  letter-spacing:0.04em;
-}
-.footer-col h4{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.4);
-  margin-bottom:16px;
-}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{
-  color:rgba(255,255,255,0.6);
-  text-decoration:none;
-  font-size:0.875rem;
-  transition:color .2s;
-}
-.footer-col ul li a:hover{color:var(--orange)}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.05);
-  padding-top:24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-}
-.footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.3)}
-.footer-legal{display:flex;gap:20px}
-.footer-legal a{font-size:0.8rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,0.6)}
-
-/* MODAL */
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:rgba(6,14,26,0.9);
-  backdrop-filter:blur(8px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .3s;
-}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal{
-  background:var(--navy-mid);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
-  width:100%;
-  max-width:560px;
-  max-height:90vh;
-  overflow-y:auto;
-  padding:40px;
-  position:relative;
-  transform:translateY(24px);
-  transition:transform .3s;
-}
-.modal-overlay.open .modal{transform:translateY(0)}
-.modal-close{
-  position:absolute;
-  top:16px;right:20px;
-  background:none;
-  border:none;
-  color:rgba(255,255,255,0.5);
-  font-size:1.4rem;
-  cursor:pointer;
-  transition:color .2s;
-  line-height:1;
-}
-.modal-close:hover{color:var(--white)}
-.modal-header{
-  margin-bottom:28px;
-}
-.modal-header h2{
-  font-family:'EB Garamond',serif;
-  font-size:1.9rem;
-  color:var(--white);
-  font-weight:400;
-  margin-bottom:6px;
-}
-.modal-header p{font-size:0.875rem;color:rgba(255,255,255,0.5)}
-.modal-steps{display:flex;gap:8px;margin-bottom:32px}
-.modal-step-dot{
-  flex:1;
-  height:3px;
-  border-radius:2px;
-  background:rgba(255,255,255,0.1);
-  transition:background .3s;
-}
-.modal-step-dot.active{background:var(--orange)}
-.form-group{margin-bottom:20px}
-.form-label{
-  display:block;
-  font-size:0.8rem;
-  font-weight:700;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.5);
-  margin-bottom:8px;
-}
-.form-input,.form-select{
-  width:100%;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:8px;
-  color:var(--white);
-  font-family:'Lato',sans-serif;
-  font-size:0.95rem;
-  padding:12px 16px;
-  transition:border-color .2s,background .2s;
-  outline:none;
-}
-.form-input:focus,.form-select:focus{
-  border-color:var(--orange);
-  background:rgba(255,255,255,0.07);
-}
-.form-select{cursor:pointer}
-.form-select option{background:var(--navy-mid);color:var(--white)}
-.service-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px}
-.service-option-label{
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:10px;
-  padding:14px;
-  cursor:pointer;
-  transition:border-color .2s,background .2s;
-}
-.service-option-label:has(input:checked){
-  border-color:var(--orange);
-  background:rgba(249,115,22,0.08);
-}
-.service-option-label input{display:none}
-.service-option-name{font-size:0.875rem;font-weight:700;color:var(--white)}
-.service-option-price{font-size:0.75rem;color:rgba(255,255,255,0.45)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.honeypot{display:none!important}
-.modal-nav{display:flex;gap:12px;margin-top:28px}
-.btn-modal-back{
-  flex:1;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  color:rgba(255,255,255,0.7);
-  padding:14px;
-  border-radius:8px;
-  font-family:'Lato',sans-serif;
-  font-size:0.95rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:background .2s;
-}
-.btn-modal-back:hover{background:rgba(255,255,255,0.08)}
-.btn-modal-next{
-  flex:2;
-  background:var(--orange);
-  border:none;
-  color:var(--white);
-  padding:14px;
-  border-radius:8px;
-  font-family:'Lato',sans-serif;
-  font-size:0.95rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:background .2s;
-  position:relative;
-  overflow:hidden;
-}
-.btn-modal-next:hover{background:var(--orange-dark)}
-.btn-modal-next::after{
-  content:'';
-  position:absolute;
-  top:0;left:-100%;
-  width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
-  transform:skewX(-20deg);
-  transition:left .5s;
-}
-.btn-modal-next:hover::after{left:150%}
-.success-state{text-align:center;padding:20px 0}
-.success-icon{width:64px;height:64px;background:rgba(34,197,94,0.15);border:2px solid rgba(34,197,94,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
-.success-icon svg{width:32px;height:32px;color:#22c55e;stroke:#22c55e}
-.success-state h3{font-family:'EB Garamond',serif;font-size:1.8rem;color:var(--white);margin-bottom:10px}
-.success-state p{color:rgba(255,255,255,0.55);line-height:1.6}
-
-/* ANIMATIONS */
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(30px)}
   to{opacity:1;transform:translateY(0)}
 }
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity 0.6s ease,transform 0.6s ease;
+
+/* ── STATS BAR ── */
+#stats{
+  background:var(--white);padding:2.5rem 1.5rem;
+  border-bottom:3px solid var(--bg-light);
 }
+.stats-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;text-align:center;
+}
+.stat-item{}
+.stat-num{
+  font-family:'EB Garamond',serif;font-size:2.2rem;font-weight:600;
+  color:var(--blue-deep);display:block;
+}
+.stat-label{font-size:.8rem;color:#64748b;margin-top:.2rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+
+/* ── SEASONAL PROMO ── */
+#promos{padding:4rem 1.5rem;background:var(--bg-light)}
+.promos-grid{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+}
+.promo-card{
+  border-radius:16px;padding:2.5rem 2rem;
+  display:flex;flex-direction:column;gap:1rem;
+  position:relative;overflow:hidden;cursor:pointer;
+  transition:transform .25s,box-shadow .25s;
+}
+.promo-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.promo-cool{background:linear-gradient(135deg,#1e40af,#0ea5e9)}
+.promo-warm{background:linear-gradient(135deg,#7c3aed,#f97316)}
+.promo-icon{width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.promo-icon svg{width:32px;height:32px;color:var(--white)}
+.promo-title{font-family:'EB Garamond',serif;font-size:1.9rem;font-weight:400;color:var(--white)}
+.promo-desc{color:rgba(255,255,255,.8);font-size:.95rem}
+.promo-btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--orange);color:var(--white);
+  padding:.6rem 1.3rem;border-radius:6px;font-weight:700;font-size:.9rem;
+  text-decoration:none;width:fit-content;
+  position:relative;overflow:hidden;transition:background .2s;
+}
+.promo-btn::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  transition:left .4s;
+}
+.promo-btn:hover{background:var(--orange-dark)}
+.promo-btn:hover::after{left:140%}
+
+/* ── BENTO GRID ── */
+.bento-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto;
+  gap:1.25rem;
+}
+.svc-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:2rem 1.75rem;
+  display:flex;flex-direction:column;gap:.75rem;
+  cursor:pointer;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+  border-top:3px solid transparent;
+}
+.svc-card:hover{
+  transform:scale(1.02);
+  border-top-color:var(--orange);
+  box-shadow:0 8px 32px rgba(0,0,0,.4);
+}
+.svc-feature{
+  grid-column:1/3;
+  background:linear-gradient(135deg,#1e3a8a,#1e40af,#0ea5e9)!important;
+  border:none!important;
+  border-top:3px solid rgba(255,255,255,.2)!important;
+}
+.svc-feature:hover{border-top-color:var(--orange)!important}
+.svc-icon{
+  width:44px;height:44px;background:rgba(255,255,255,.12);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.svc-icon svg{width:22px;height:22px;color:var(--white)}
+.svc-title{font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--white)}
+.svc-desc{color:rgba(255,255,255,.65);font-size:.875rem;line-height:1.6;flex:1}
+.svc-link{
+  color:var(--orange);text-decoration:none;font-size:.875rem;font-weight:700;
+  display:inline-flex;align-items:center;gap:.3rem;transition:gap .2s;
+}
+.svc-link:hover{gap:.6rem}
+.svc-feature .svc-title{font-size:1.9rem}
+.svc-feature .svc-desc{font-size:1rem;max-width:500px}
+
+/* ── CERTIFICATIONS ── */
+.cert-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.cert-chip{
+  display:flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  padding:.6rem 1.25rem;border-radius:8px;
+  font-size:.875rem;font-weight:700;color:var(--white);
+  transition:background .2s,border-color .2s;cursor:default;
+}
+.cert-chip:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+
+/* ── WHY GRID ── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.why-card{
+  background:var(--white);border-radius:12px;padding:1.75rem;
+  border-left:4px solid var(--blue-deep);
+  box-shadow:0 2px 12px rgba(30,64,175,.08);
+  transition:transform .25s,box-shadow .25s;
+}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(30,64,175,.15)}
+.why-icon{width:40px;height:40px;margin-bottom:1rem;color:var(--blue-deep)}
+.why-icon svg{width:40px;height:40px}
+.why-card h3{font-family:'EB Garamond',serif;font-size:1.25rem;color:var(--text-dark);margin-bottom:.5rem}
+.why-card p{color:#475569;font-size:.875rem;line-height:1.6}
+
+/* ── PROCESS ── */
+.process-steps{display:flex;align-items:flex-start;gap:0;justify-content:center}
+.process-step{flex:1;text-align:center;padding:0 1rem}
+.process-num{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--orange);color:var(--white);
+  font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;
+  box-shadow:0 4px 16px rgba(249,115,22,.35);
+}
+.process-title{font-family:'EB Garamond',serif;font-size:1.3rem;color:var(--text-dark);margin-bottom:.5rem}
+.process-desc{color:#475569;font-size:.875rem;line-height:1.6}
+.process-connector{
+  width:80px;height:2px;flex-shrink:0;margin-top:28px;
+  background:repeating-linear-gradient(90deg,var(--orange) 0,var(--orange) 8px,transparent 8px,transparent 16px);
+  animation:dashMove 1.5s linear infinite;
+}
+@keyframes dashMove{to{background-position:16px 0}}
+
+/* ── REVIEWS ── */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.review-card{
+  background:var(--white);border-radius:14px;padding:2rem;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  display:flex;flex-direction:column;gap:1rem;
+  transition:transform .25s,box-shadow .25s;
+}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
+.review-stars{display:flex;gap:.2rem}
+.review-stars svg{width:18px;height:18px}
+.review-text{color:#334155;font-size:.9rem;line-height:1.7;font-style:italic;flex:1}
+.review-footer{display:flex;align-items:center;gap:.75rem}
+.review-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue-deep),var(--blue-light));
+  color:var(--white);font-size:.8rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.review-name{font-weight:700;color:var(--text-dark);font-size:.875rem}
+.review-loc{color:#94a3b8;font-size:.75rem}
+
+/* ── AREAS GRID ── */
+.areas-grid{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.area-badge{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.8);padding:.5rem 1.25rem;border-radius:999px;
+  font-size:.875rem;font-weight:700;cursor:default;
+  transition:background .2s,border-color .2s,color .2s;
+}
+.area-badge:hover{background:rgba(249,115,22,.15);border-color:var(--orange);color:var(--white)}
+
+/* ── FOOTER GRID ── */
+.footer-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:2.5rem;
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:0 4%}
-  .nav-links{display:none}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .service-card-feature{grid-column:span 2}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .reviews-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .promo-grid{grid-template-columns:1fr}
-  .process-steps{flex-direction:column;align-items:center}
-  .process-connector{width:2px;height:32px;border-top:none;border-left:2px dashed rgba(249,115,22,0.3);margin-top:0;margin-left:0}
+/* ── MODAL ── */
+#booking-modal{
+  display:none;position:fixed;inset:0;z-index:var(--z-modal);
+  background:rgba(6,14,26,.85);backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:1.5rem;
 }
-@media(max-width:600px){
-  .services-grid{grid-template-columns:1fr}
-  .service-card-feature{grid-column:span 1}
+#booking-modal.open{display:flex}
+.modal-box{
+  background:#0b1a2e;border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;width:100%;max-width:560px;
+  max-height:90vh;overflow-y:auto;
+  box-shadow:0 24px 80px rgba(0,0,0,.6);
+  animation:modalIn .35s ease;
+}
+@keyframes modalIn{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 1.75rem;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.modal-header h2{font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--white)}
+.modal-close{
+  background:none;border:none;color:rgba(255,255,255,.5);
+  font-size:1.4rem;cursor:pointer;padding:.25rem .5rem;
+  transition:color .2s;line-height:1;
+}
+.modal-close:hover{color:var(--white)}
+.modal-body{padding:1.75rem}
+.step-indicators{display:flex;gap:.5rem;margin-bottom:1.75rem}
+.step-dot{
+  height:4px;flex:1;border-radius:2px;
+  background:rgba(255,255,255,.15);transition:background .3s;
+}
+.step-dot.active{background:var(--orange)}
+.step-panel{display:none}
+.step-panel.active{display:block}
+.form-group{margin-bottom:1.25rem}
+.form-group label{
+  display:block;font-size:.8rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.5rem;
+}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;background:rgba(255,255,255,.06);
+  border:1.5px solid rgba(255,255,255,.12);
+  border-radius:8px;padding:.75rem 1rem;
+  color:var(--white);font-family:'Lato',sans-serif;font-size:.95rem;
+  outline:none;transition:border-color .2s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--blue-mid);
+}
+.form-group select option{background:#0b1a2e;color:var(--white)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.svc-options{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.svc-option{
+  background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:1rem .75rem;cursor:pointer;
+  transition:border-color .2s,background .2s;text-align:center;
+}
+.svc-option:hover{border-color:rgba(249,115,22,.4);background:rgba(249,115,22,.06)}
+.svc-option.selected{border-color:var(--orange);background:rgba(249,115,22,.12)}
+.svc-option .svc-opt-name{font-weight:700;font-size:.875rem;color:var(--white);display:block}
+.svc-option .svc-opt-price{font-size:.75rem;color:rgba(255,255,255,.5);display:block;margin-top:.2rem}
+.modal-footer-btns{display:flex;gap:.75rem;margin-top:1.5rem;justify-content:flex-end}
+.btn-prev{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:var(--white);padding:.65rem 1.4rem;border-radius:6px;
+  font-family:'Lato',sans-serif;font-weight:700;cursor:pointer;transition:background .2s;
+}
+.btn-prev:hover{background:rgba(255,255,255,.14)}
+.success-msg{text-align:center;padding:2rem 0}
+.success-msg svg{width:64px;height:64px;color:var(--orange);margin:0 auto 1rem}
+.success-msg h3{font-family:'EB Garamond',serif;font-size:1.8rem;color:var(--white);margin-bottom:.75rem}
+.success-msg p{color:rgba(255,255,255,.65);line-height:1.6}
+.hp-field{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+
+/* ── MOBILE NAV ── */
+@media(max-width:900px){
+  .hamburger{display:block}
+  .nav-links{
+    display:none;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--navy-dark);border-top:1px solid rgba(255,255,255,.08);
+    padding:1rem 1.5rem;
+  }
+  .nav-links.open{display:flex}
+  .nav-links li{border-bottom:1px solid rgba(255,255,255,.05);padding:.75rem 0}
+  .nav-links li:last-child{border-bottom:none}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .bento-grid{grid-template-columns:1fr 1fr}
+  .svc-feature{grid-column:1/3}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .bento-grid{grid-template-columns:1fr}
+  .svc-feature{grid-column:1/2}
   .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .promos-grid{grid-template-columns:1fr}
+  .process-steps{flex-direction:column;align-items:center;gap:1.5rem}
+  .process-connector{width:2px;height:40px;margin:0 auto;background:repeating-linear-gradient(180deg,var(--orange) 0,var(--orange) 8px,transparent 8px,transparent 16px)}
+  .stats-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
-  .stats-bar{flex-direction:column;gap:16px}
-  .stat-divider{display:none}
-  .service-options{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
-  .modal{padding:28px 20px}
+  .svc-options{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero-icons{gap:1.5rem}
+  .trust-badges{gap:.5rem}
+  .badge{font-size:.72rem;padding:.3rem .65rem}
 }
 </style>
 </head>
 <body>
-
 <!-- EMERGENCY BANNER -->
-<div id="emergency-banner">
-  <span>🌡️ <strong>Summer Heat Alert</strong> — 24/7 Emergency AC Repair Available Now &rarr; <a href="tel:2105550300">(210) 555-0300</a></span>
-  <button class="banner-close" onclick="document.getElementById('emergency-banner').style.display='none'" aria-label="Close">&times;</button>
+<div id="emergency-banner" role="alert">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+  <span>Summer Heat Alert — 24/7 Emergency AC Repair Available Now</span>
+  <a href="tel:+12105550300">&rarr; (210) 555-0300</a>
+  <button id="close-banner" aria-label="Close alert">&times;</button>
 </div>
 
 <!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo"><span class="star">&#9733;</span> Lone Star HVAC</a>
-  <ul class="nav-links">
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="Lone Star HVAC home">
+    <span class="star" aria-hidden="true">&#9733;</span> Lone Star HVAC
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#why-us">Why Us</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#areas">Service Areas</a></li>
+    <li><a href="#areas">Areas</a></li>
+    <li>
+      <a href="tel:+12105550300" class="nav-phone" aria-label="Call us">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.99 1.17 2 2 0 012.98.01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        (210) 555-0300
+      </a>
+    </li>
+    <li><button class="btn-orange" onclick="openModal()" aria-haspopup="dialog">Book Service</button></li>
   </ul>
-  <div class="nav-right">
-    <a href="tel:2105550300" class="nav-phone">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      (210) 555-0300
-    </a>
-    <button class="btn-nav" onclick="openModal()">Book Service</button>
-  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <div class="hero-blob hero-blob-1"></div>
-    <div class="hero-blob hero-blob-2"></div>
-    <div class="hero-blob hero-blob-3"></div>
-  </div>
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">San Antonio&rsquo;s #1 HVAC Provider</div>
+    <p class="hero-eyebrow">San Antonio&rsquo;s #1 HVAC Company</p>
     <h1 class="hero-h1">Year-Round Comfort,<br><em>Guaranteed.</em></h1>
     <p class="hero-sub">NATE-Certified HVAC Service in San Antonio, TX &mdash; 24/7</p>
-    <div class="hero-ctas">
-      <button class="btn-primary" onclick="openModal()">Schedule Service &rarr;</button>
-      <a href="tel:2105550300" class="btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Call (210) 555-0300
-      </a>
+    <div class="hero-btns">
+      <button class="btn-orange" onclick="openModal()">Schedule Service &rarr;</button>
+      <a href="tel:+12105550300" class="btn-ghost">Call (210) 555-0300</a>
     </div>
-    <div class="hero-badges">
-      <span class="badge-pill">&#128309; NATE-Certified</span>
-      <span class="badge-pill">&#10003; Licensed &amp; Insured</span>
-      <span class="badge-pill">&#9889; 24/7 Emergency</span>
-      <span class="badge-pill">&#9733; 4.9 Rating</span>
-      <span class="badge-pill">&#127775; 10-Year Warranty</span>
+    <div class="trust-badges" role="list">
+      <span class="badge" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NATE-Certified
+      </span>
+      <span class="badge" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Licensed &amp; Insured
+      </span>
+      <span class="badge" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        24/7 Emergency
+      </span>
+      <span class="badge" role="listitem">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        4.9 Rating
+      </span>
+      <span class="badge" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+        10-Year Warranty
+      </span>
     </div>
-    <div class="hero-icons">
-      <div class="hero-icon-wrap">
-        <svg class="snowflake-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="2" x2="12" y2="22"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
-          <line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
-          <line x1="12" y1="6" x2="9" y2="3"/>
-          <line x1="12" y1="6" x2="15" y2="3"/>
-          <line x1="12" y1="18" x2="9" y2="21"/>
-          <line x1="12" y1="18" x2="15" y2="21"/>
-          <line x1="6" y1="12" x2="3" y2="9"/>
-          <line x1="6" y1="12" x2="3" y2="15"/>
-          <line x1="18" y1="12" x2="21" y2="9"/>
-          <line x1="18" y1="12" x2="21" y2="15"/>
+    <div class="hero-icons" aria-hidden="true">
+      <div class="hero-icon-item">
+        <svg class="snowflake-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5" aria-hidden="true">
+          <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
+          <circle cx="12" cy="12" r="2.5" fill="#60a5fa"/>
         </svg>
-        <span class="hero-icon-label">AC Cooling</span>
+        <span>AC Cooling</span>
       </div>
-      <div class="hero-divider"></div>
-      <div class="hero-icon-wrap">
-        <svg class="flame-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2c0 0-6 5.686-6 10a6 6 0 0012 0C18 7.686 12 2 12 2zm0 16a4 4 0 01-4-4c0-2.48 2.087-5.21 4-7.72C13.913 8.79 16 11.52 16 14a4 4 0 01-4 4z" opacity="0.4"/>
-          <path d="M12 7s-3 2.843-3 5a3 3 0 006 0C15 9.843 12 7 12 7z"/>
+      <div style="width:1px;height:40px;background:rgba(255,255,255,.15)"></div>
+      <div class="hero-icon-item">
+        <svg class="flame-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.5" aria-hidden="true">
+          <path d="M12 2c0 0-6 5-6 11a6 6 0 0012 0C18 7 12 2 12 2z" fill="rgba(251,146,60,.3)"/>
+          <path d="M12 8c0 0-3 2.5-3 5.5a3 3 0 006 0C15 10.5 12 8 12 8z" fill="rgba(251,146,60,.6)"/>
         </svg>
-        <span class="hero-icon-label">Heat</span>
+        <span>Heat &amp; Warmth</span>
       </div>
     </div>
   </div>
-  <div class="scroll-indicator">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    Scroll
+  <div class="scroll-indicator" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    <span>Scroll</span>
   </div>
 </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="stat-number" data-target="2400" data-suffix="+">0</span>
-    <div class="stat-label">Systems Serviced</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number" data-target="4.9" data-suffix="&#9733; Google" data-decimal="true">0</span>
-    <div class="stat-label">Google Rating</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number" data-target="14" data-suffix=" Yrs">0</span>
-    <div class="stat-label">Years in Business</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number" data-target="60" data-suffix="-Min">0</span>
-    <div class="stat-label">Emergency Response</div>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number" data-target="187" data-suffix="+">0</span>
-    <div class="stat-label">5-Star Reviews</div>
-  </div>
-</div>
-
-<!-- SEASONAL PROMO -->
-<section class="promo-section">
-  <div class="promo-grid">
-    <div class="promo-card promo-card-cool reveal">
-      <div class="promo-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="2" x2="12" y2="22"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
-          <line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
-        </svg>
-      </div>
-      <div class="promo-badge">Limited Time</div>
-      <h3>Summer AC Tune-Up</h3>
-      <div class="promo-price">$89</div>
-      <p>Keep your AC running efficiently all summer long. Includes full system inspection, coil cleaning, and refrigerant check.</p>
-      <button class="btn-promo btn-promo-orange" onclick="openModal()">Book Now &rarr;</button>
+<!-- STATS -->
+<section id="stats" aria-label="Company statistics">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-num" data-target="2400" data-suffix="+">0</span>
+      <span class="stat-label">Systems Serviced</span>
     </div>
-    <div class="promo-card promo-card-warm reveal" style="transition-delay:.1s">
+    <div class="stat-item">
+      <span class="stat-num" data-target="4.9" data-suffix="&#9733;" data-decimal="1">0</span>
+      <span class="stat-label">Google Rating</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="14" data-suffix=" Yrs">0</span>
+      <span class="stat-label">In Business</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="60" data-suffix="-Min">0</span>
+      <span class="stat-label">Emergency Response</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="187" data-suffix="">0</span>
+      <span class="stat-label">5-Star Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONAL PROMOS -->
+<section id="promos" aria-label="Seasonal promotions">
+  <div class="promos-grid">
+    <div class="promo-card promo-cool reveal">
       <div class="promo-icon">
-        <svg viewBox="0 0 24 24" fill="white" width="52" height="52">
-          <path d="M12 2c0 0-6 5.686-6 10a6 6 0 0012 0C18 7.686 12 2 12 2zm0 16a4 4 0 01-4-4c0-2.48 2.087-5.21 4-7.72C13.913 8.79 16 11.52 16 14a4 4 0 01-4 4z" opacity="0.6"/>
-          <path d="M12 7s-3 2.843-3 5a3 3 0 006 0C15 9.843 12 7 12 7z"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
         </svg>
       </div>
-      <div class="promo-badge">Fall Special</div>
-      <h3>Winter Heating Check</h3>
-      <div class="promo-price">$79</div>
-      <p>Prepare your heating system before cold snaps hit. Full furnace inspection, safety check, and filter replacement included.</p>
-      <button class="btn-promo" onclick="openModal()">Book Now &rarr;</button>
+      <div class="promo-title">Summer AC Tune-Up &mdash; $89</div>
+      <p class="promo-desc">Keep your AC running strong all summer long. Includes full inspection, coil cleaning, and refrigerant check.</p>
+      <a href="#" class="promo-btn" onclick="openModal();return false;">Book Now &rarr;</a>
+    </div>
+    <div class="promo-card promo-warm reveal">
+      <div class="promo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M12 2c0 0-6 5-6 11a6 6 0 0012 0C18 7 12 2 12 2z"/>
+        </svg>
+      </div>
+      <div class="promo-title">Winter Heating Check &mdash; $79</div>
+      <p class="promo-desc">Prepare for cold snaps before they hit. Full furnace inspection, heat exchanger check &amp; safety test.</p>
+      <a href="#" class="promo-btn" onclick="openModal();return false;">Book Now &rarr;</a>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title">Complete HVAC Solutions</h2>
-  <p class="section-sub">From emergency repairs to full system installations, our NATE-certified technicians handle it all with speed and expertise.</p>
-  <div class="services-grid">
-    <div class="service-card service-card-feature reveal">
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9.59 4.59A2 2 0 1011 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/>
-      </svg>
-      <h3>AC Repair &amp; Maintenance</h3>
-      <p>Same-day diagnostics and repair for all makes and models. Our certified technicians restore your cooling fast — because in San Antonio heat, every hour counts. Annual maintenance plans available to prevent breakdowns before they happen.</p>
-      <a href="#" class="service-link" onclick="openModal();return false;">Book AC Service &rarr;</a>
+<section id="services" aria-label="Our services" style="background:var(--navy-dark);padding:5rem 1.5rem">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3rem">
+      <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">What We Do</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--white)">Complete HVAC Solutions</h2>
+      <p style="color:rgba(255,255,255,.6);margin-top:.75rem;max-width:520px;margin-left:auto;margin-right:auto">From emergency repairs to new installations — we handle everything your home comfort system needs.</p>
     </div>
-    <div class="service-card reveal" style="transition-delay:.05s">
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/>
-      </svg>
-      <h3>Heating Repair</h3>
-      <p>Furnace, heat pump, and boiler repair. Fast emergency service when temperatures drop.</p>
-      <a href="#" class="service-link" onclick="openModal();return false;">Book Heating &rarr;</a>
-    </div>
-    <div class="service-card reveal" style="transition-delay:.1s">
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
-      </svg>
-      <h3>New Installation</h3>
-      <p>Energy-efficient system selection, professional installation, and extended manufacturer warranties.</p>
-      <a href="#" class="service-link" onclick="openModal();return false;">Get Quote &rarr;</a>
-    </div>
-    <div class="service-card reveal" style="transition-delay:.15s">
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-      </svg>
-      <h3>Duct Cleaning</h3>
-      <p>Professional duct cleaning removes allergens, dust, and debris for cleaner, healthier indoor air.</p>
-      <a href="#" class="service-link" onclick="openModal();return false;">Schedule Cleaning &rarr;</a>
-    </div>
-    <div class="service-card reveal" style="transition-delay:.2s">
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-      <h3>Air Quality</h3>
-      <p>UV purifiers, HEPA filtration, and humidity control systems for a healthier home environment.</p>
-      <a href="#" class="service-link" onclick="openModal();return false;">Improve Air &rarr;</a>
-    </div>
-    <div class="service-card reveal" style="transition-delay:.25s">
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="7" width="20" height="14" rx="2"/>
-        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-        <line x1="12" y1="12" x2="12" y2="16"/>
-        <line x1="10" y1="14" x2="14" y2="14"/>
-      </svg>
-      <h3>Commercial HVAC</h3>
-      <p>Scalable commercial solutions with preventive maintenance agreements and priority service.</p>
-      <a href="#" class="service-link" onclick="openModal();return false;">Get Commercial Quote &rarr;</a>
+    <div class="bento-grid">
+      <div class="svc-card svc-feature reveal">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17.5 19H9a7 7 0 117-7v1"/><polyline points="21 15 16 20 13 17"/></svg>
+        </div>
+        <h3 class="svc-title">AC Repair &amp; Maintenance</h3>
+        <p class="svc-desc">Fast diagnostics and reliable repairs for all makes and models. Preventive maintenance plans that keep your system running at peak efficiency year-round.</p>
+        <a href="#" class="svc-link" onclick="openModal();return false;">Book Repair &rarr;</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+        </div>
+        <h3 class="svc-title">Heating Repair</h3>
+        <p class="svc-desc">Furnace, heat pump, and boiler repair by certified technicians.</p>
+        <a href="#" class="svc-link" onclick="openModal();return false;">Book &rarr;</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        </div>
+        <h3 class="svc-title">New Installation</h3>
+        <p class="svc-desc">Energy-efficient systems sized perfectly for your home.</p>
+        <a href="#" class="svc-link" onclick="openModal();return false;">Book &rarr;</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        </div>
+        <h3 class="svc-title">Duct Cleaning</h3>
+        <p class="svc-desc">Remove dust, allergens, and mold with professional duct sanitizing.</p>
+        <a href="#" class="svc-link" onclick="openModal();return false;">Book &rarr;</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17.5 19H9a7 7 0 117-7v1"/><path d="M21 3v4h-4"/></svg>
+        </div>
+        <h3 class="svc-title">Indoor Air Quality</h3>
+        <p class="svc-desc">UV purifiers, HEPA filters, and humidity control solutions.</p>
+        <a href="#" class="svc-link" onclick="openModal();return false;">Book &rarr;</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <h3 class="svc-title">Commercial HVAC</h3>
+        <p class="svc-desc">Full-service commercial contracts for offices and retail spaces.</p>
+        <a href="#" class="svc-link" onclick="openModal();return false;">Book &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CERTIFICATIONS -->
-<section class="certs-section">
-  <div style="text-align:center">
-    <div class="section-label">Our Credentials</div>
-    <h2 class="section-title">Certified. Licensed. Trusted.</h2>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-badge reveal">
-      <svg class="cert-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-      <div class="cert-badge-text"><strong>NATE-Certified</strong><span>North American Technician Excellence</span></div>
-    </div>
-    <div class="cert-badge reveal" style="transition-delay:.05s">
-      <svg class="cert-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <div class="cert-badge-text"><strong>EPA 608 Certified</strong><span>Refrigerant Handling Certified</span></div>
-    </div>
-    <div class="cert-badge reveal" style="transition-delay:.1s">
-      <svg class="cert-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
-      <div class="cert-badge-text"><strong>Licensed &amp; Insured</strong><span>Texas HVAC Contractor License</span></div>
-    </div>
-    <div class="cert-badge reveal" style="transition-delay:.15s">
-      <svg class="cert-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <div class="cert-badge-text"><strong>BBB Accredited</strong><span>A+ Better Business Bureau Rating</span></div>
-    </div>
-    <div class="cert-badge reveal" style="transition-delay:.2s">
-      <svg class="cert-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <div class="cert-badge-text"><strong>Google 4.9&#9733;</strong><span>187+ Verified Reviews</span></div>
+<section id="certs" aria-label="Certifications and trust" style="background:var(--navy-darkest);padding:4rem 1.5rem;border-top:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1000px;margin:0 auto;text-align:center">
+    <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:1.5rem">Credentials &amp; Certifications</p>
+    <div class="cert-row" role="list">
+      <div class="cert-chip" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-mid)" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NATE-Certified Technicians
+      </div>
+      <div class="cert-chip" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        EPA 608 Certified
+      </div>
+      <div class="cert-chip" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-mid)" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+        Licensed Texas HVAC Contractor
+      </div>
+      <div class="cert-chip" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        BBB Accredited
+      </div>
+      <div class="cert-chip" role="listitem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Google 4.9&#9733; Rated
+      </div>
     </div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="why-section" id="why-us">
-  <div class="section-label">Why Choose Us</div>
-  <h2 class="section-title">The Lone Star Difference</h2>
-  <p class="section-sub">We&rsquo;re not just another HVAC company. We&rsquo;re your neighbors — committed to keeping San Antonio families comfortable year-round.</p>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <h3>NATE-Certified Techs</h3>
-      <p>Every technician holds NATE certification — the gold standard in HVAC excellence. You get expert service, every visit.</p>
+<section id="why-us" aria-label="Why choose us" style="background:var(--bg-light);padding:5rem 1.5rem">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3rem">
+      <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">Why Choose Us</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--text-dark)">The Lone Star Difference</h2>
     </div>
-    <div class="why-card reveal" style="transition-delay:.07s">
-      <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <h3>60-Min Emergency Response</h3>
-      <p>When your AC fails at midnight in July, we answer. Guaranteed 60-minute response for emergency calls, 24/7/365.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.14s">
-      <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-      <h3>Upfront, Flat-Rate Pricing</h3>
-      <p>No surprises. We quote before we start. Our transparent pricing means you always know exactly what you&rsquo;re paying.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.21s">
-      <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      <h3>10-Year Warranty</h3>
-      <p>Industry-leading warranty on all new installations. We stand behind our work — long after the job is done.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.28s">
-      <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <h3>4.9&#9733; Rated</h3>
-      <p>187+ five-star Google reviews from real San Antonio families. Our reputation is our most valuable asset.</p>
-    </div>
-    <div class="why-card reveal" style="transition-delay:.35s">
-      <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <h3>Flexible Scheduling</h3>
-      <p>Evening and weekend appointments available. We work around your schedule, not the other way around.</p>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-deep)" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>NATE-Certified Experts</h3><p>Every technician holds the industry&rsquo;s highest certification. No rookies, ever.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-deep)" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>60-Min Emergency Response</h3><p>When your AC dies at midnight in August, we show up &mdash; guaranteed within 60 minutes.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-deep)" stroke-width="1.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Upfront Flat Pricing</h3><p>You know the full price before work begins. No surprise fees, no hidden charges.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-deep)" stroke-width="1.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div><h3>100% Satisfaction Promise</h3><p>Not happy? We come back and fix it at no extra cost. That&rsquo;s our iron-clad guarantee.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-deep)" stroke-width="1.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h3>4.9-Star Google Rating</h3><p>Over 187 verified reviews from real San Antonio homeowners who trust us.</p></div>
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-deep)" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Same-Day Appointments</h3><p>Book online by noon and we can often be there the same day, including weekends.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="process-section">
-  <div style="text-align:center">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Simple. Fast. Done Right.</h2>
-  </div>
-  <div class="process-steps">
-    <div class="process-step reveal">
-      <div class="process-num">1</div>
-      <h3>Schedule</h3>
-      <p>Book online or call us. Tell us the issue and we&rsquo;ll confirm your appointment fast.</p>
-    </div>
-    <div class="process-connector"></div>
-    <div class="process-step reveal" style="transition-delay:.15s">
-      <div class="process-num">2</div>
-      <h3>Diagnose</h3>
-      <p>Our tech arrives on time, runs a full diagnostic, and gives you a flat-rate quote before any work begins.</p>
-    </div>
-    <div class="process-connector"></div>
-    <div class="process-step reveal" style="transition-delay:.3s">
-      <div class="process-num">3</div>
-      <h3>Fix &amp; Follow-Up</h3>
-      <p>We complete the repair to your satisfaction, then follow up to make sure everything&rsquo;s running perfectly.</p>
+<section id="process" aria-label="How it works" style="background:var(--white);padding:5rem 1.5rem">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">How It Works</p>
+    <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--text-dark);margin-bottom:3rem">Three Simple Steps</h2>
+    <div class="process-steps">
+      <div class="process-step reveal"><div class="process-num">1</div><h3 class="process-title">Schedule</h3><p class="process-desc">Book online in 60 seconds or call us directly. Pick a time that works for you — including same-day and emergency slots.</p></div>
+      <div class="process-connector" aria-hidden="true"></div>
+      <div class="process-step reveal"><div class="process-num">2</div><h3 class="process-title">Diagnose</h3><p class="process-desc">Our NATE-certified tech arrives on time, performs a full system diagnostic, and gives you a clear upfront quote — no surprises.</p></div>
+      <div class="process-connector" aria-hidden="true"></div>
+      <div class="process-step reveal"><div class="process-num">3</div><h3 class="process-title">Fix &amp; Follow-Up</h3><p class="process-desc">We fix it right the first time, test the system thoroughly, and follow up to make sure you&rsquo;re 100% comfortable.</p></div>
     </div>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="reviews-section" id="reviews">
-  <div class="section-label">Customer Stories</div>
-  <h2 class="section-title">Real Reviews from Real Neighbors</h2>
-  <div class="reviews-grid">
-    <div class="review-card reveal">
-      <div class="review-stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      </div>
-      <p class="review-text">&ldquo;My AC went out at 9pm on a Friday in August. Lone Star had a tech at my door by 10:15. He diagnosed the problem in 20 minutes, had the part on his truck, and the house was cool again before midnight. I cannot recommend them highly enough.&rdquo;</p>
-      <div class="review-author">Mark T.</div>
-      <div class="review-location">Stone Oak, San Antonio</div>
+<section id="reviews" aria-label="Customer reviews" style="background:var(--bg-light);padding:5rem 1.5rem">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:3rem">
+      <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">What Customers Say</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--text-dark)">Real Reviews from San Antonio</h2>
     </div>
-    <div class="review-card reveal" style="transition-delay:.1s">
-      <div class="review-stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      </div>
-      <p class="review-text">&ldquo;Got three quotes for a new AC system. Lone Star was in the middle price-wise but offered the best warranty and the tech actually explained what he was installing. The NATE certification really showed — he knew the equipment inside out. Worth every penny.&rdquo;</p>
-      <div class="review-author">Sarah L.</div>
-      <div class="review-location">Alamo Heights, San Antonio</div>
-    </div>
-    <div class="review-card reveal" style="transition-delay:.2s">
-      <div class="review-stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      </div>
-      <p class="review-text">&ldquo;Used Lone Star for our annual tune-up and they caught a refrigerant leak before it became a major issue. Saved us from an expensive breakdown mid-summer. Their maintenance plan is a no-brainer — we&rsquo;ve been customers for 6 years now and wouldn&rsquo;t go anywhere else.&rdquo;</p>
-      <div class="review-author">James R.</div>
-      <div class="review-location">Northwest Side, San Antonio</div>
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <blockquote class="review-text">&ldquo;My AC quit on a Saturday night in July &mdash; 102 degrees outside. Called Lone Star and they had a tech at my door within 45 minutes. Fixed it same night. The technician was professional, explained everything clearly, and the price was exactly what they quoted. Absolutely saved us.&rdquo;</blockquote>
+        <footer class="review-footer"><div class="review-avatar" aria-hidden="true">MT</div><div><div class="review-name">Mark T.</div><div class="review-loc">Stone Oak, San Antonio</div></div></footer>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <blockquote class="review-text">&ldquo;I was quoted $2,800 by another company for a new unit. Lone Star came out, found a clogged drain line causing the problem, and fixed it for $150. Their NATE-certified tech knew exactly what to look for. I trust them completely and have been on their maintenance plan for three years now.&rdquo;</blockquote>
+        <footer class="review-footer"><div class="review-avatar" aria-hidden="true">SL</div><div><div class="review-name">Sarah L.</div><div class="review-loc">Alamo Heights, San Antonio</div></div></footer>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <blockquote class="review-text">&ldquo;We replaced our entire system with Lone Star &mdash; 5-ton Carrier unit for a 2,400 sq ft home. They sized it correctly (unlike our previous installer who oversized), got permits pulled, and the install team was clean and professional. System runs perfectly and our electric bill dropped $80/month.&rdquo;</blockquote>
+        <footer class="review-footer"><div class="review-avatar" aria-hidden="true">JR</div><div><div class="review-name">James R.</div><div class="review-loc">Northwest Side, San Antonio</div></div></footer>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- SERVICE AREAS -->
-<section class="areas-section" id="areas">
-  <div style="text-align:center">
-    <div class="section-label">Where We Serve</div>
-    <h2 class="section-title" style="color:var(--navy-mid)">San Antonio &amp; Surrounding Areas</h2>
-  </div>
-  <div class="areas-grid">
-    <span class="area-badge">Stone Oak</span>
-    <span class="area-badge">Alamo Heights</span>
-    <span class="area-badge">Helotes</span>
-    <span class="area-badge">Boerne</span>
-    <span class="area-badge">Schertz</span>
-    <span class="area-badge">Universal City</span>
-    <span class="area-badge">Live Oak</span>
-    <span class="area-badge">Converse</span>
-    <span class="area-badge">Leon Valley</span>
-    <span class="area-badge">Shavano Park</span>
-    <span class="area-badge">Hollywood Park</span>
-    <span class="area-badge">Castle Hills</span>
-    <span class="area-badge">Windcrest</span>
-    <span class="area-badge">Kirby</span>
-    <span class="area-badge">Selma</span>
-    <span class="area-badge">Cibolo</span>
+<section id="areas" aria-label="Service areas" style="background:var(--navy-dark);padding:4rem 1.5rem">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <p style="font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem">Service Areas</p>
+    <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:300;color:var(--white);margin-bottom:2rem">Proudly Serving Greater San Antonio</h2>
+    <div class="areas-grid" role="list">
+      <span class="area-badge" role="listitem">Stone Oak</span><span class="area-badge" role="listitem">Alamo Heights</span><span class="area-badge" role="listitem">Boerne</span><span class="area-badge" role="listitem">Schertz</span><span class="area-badge" role="listitem">Universal City</span><span class="area-badge" role="listitem">Helotes</span><span class="area-badge" role="listitem">Leon Valley</span><span class="area-badge" role="listitem">Converse</span><span class="area-badge" role="listitem">Live Oak</span><span class="area-badge" role="listitem">Cibolo</span><span class="area-badge" role="listitem">New Braunfels</span><span class="area-badge" role="listitem">Selma</span>
+    </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="cta-section">
-  <div class="section-label">Get Started Today</div>
-  <h2 class="section-title">Ready for Year-Round Comfort?</h2>
-  <p class="section-sub">Join 2,400+ San Antonio families who trust Lone Star HVAC. Same-day service available.</p>
-  <div class="cta-buttons">
-    <button class="btn-primary" onclick="openModal()">Schedule Service &rarr;</button>
-    <a href="tel:2105550300" class="btn-ghost">Call (210) 555-0300</a>
+<section id="cta-final" aria-label="Call to action" style="background:var(--navy-darkest);padding:6rem 1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:700px;margin:0 auto">
+    <h2 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--white);margin-bottom:1rem">Ready for Year-Round Comfort?</h2>
+    <p style="color:rgba(255,255,255,.65);font-size:1.05rem;margin-bottom:2.5rem">Join over 2,400 San Antonio families who trust Lone Star HVAC for all their heating and cooling needs.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <button class="btn-orange" style="padding:.85rem 2rem;font-size:1rem" onclick="openModal()">Schedule Service &rarr;</button>
+      <a href="tel:+12105550300" class="btn-ghost" style="padding:.85rem 2rem;font-size:1rem">Call (210) 555-0300</a>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer style="background:#060e1a;padding:4rem 1.5rem 2rem;border-top:1px solid rgba(255,255,255,.06)">
   <div class="footer-grid">
     <div>
-      <div class="footer-brand-name"><span class="star">&#9733;</span> Lone Star HVAC</div>
-      <p class="footer-tagline">San Antonio&rsquo;s trusted NATE-Certified HVAC specialists since 2012. Keeping families comfortable through every Texas season.</p>
-      <div class="footer-certs">
-        <span class="footer-cert-chip">NATE-Certified</span>
-        <span class="footer-cert-chip">EPA 608</span>
-        <span class="footer-cert-chip">TX Licensed</span>
-        <span class="footer-cert-chip">BBB A+</span>
-        <span class="footer-cert-chip">Google 4.9&#9733;</span>
+      <div style="font-family:'EB Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:.75rem"><span style="color:var(--orange)">&#9733;</span> Lone Star HVAC</div>
+      <p style="color:rgba(255,255,255,.5);font-size:.875rem;line-height:1.6;max-width:220px">San Antonio&rsquo;s most trusted HVAC company since 2012. NATE-Certified, licensed, and insured.</p>
+      <div style="display:flex;gap:.5rem;margin-top:1rem;flex-wrap:wrap">
+        <span style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:var(--blue-light);padding:.2rem .6rem;border-radius:4px;font-size:.7rem;font-weight:700">NATE-Certified</span>
+        <span style="background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.3);color:var(--orange);padding:.2rem .6rem;border-radius:4px;font-size:.7rem;font-weight:700">EPA 608</span>
+        <span style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:var(--blue-light);padding:.2rem .6rem;border-radius:4px;font-size:.7rem;font-weight:700">BBB A+</span>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">AC Repair</a></li>
-        <li><a href="#">Heating Repair</a></li>
-        <li><a href="#">New Installation</a></li>
-        <li><a href="#">Duct Cleaning</a></li>
-        <li><a href="#">Air Quality</a></li>
-        <li><a href="#">Commercial HVAC</a></li>
+    <div>
+      <h4 style="color:var(--white);font-family:'Lato',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem">Services</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem">
+        <li><a href="#" onclick="openModal();return false;" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">AC Repair &amp; Maintenance</a></li>
+        <li><a href="#" onclick="openModal();return false;" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Heating Repair</a></li>
+        <li><a href="#" onclick="openModal();return false;" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">New Installation</a></li>
+        <li><a href="#" onclick="openModal();return false;" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Duct Cleaning</a></li>
+        <li><a href="#" onclick="openModal();return false;" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Indoor Air Quality</a></li>
+        <li><a href="#" onclick="openModal();return false;" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Commercial HVAC</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#why-us">Why Choose Us</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#areas">Service Areas</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Blog</a></li>
+    <div>
+      <h4 style="color:var(--white);font-family:'Lato',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem">Service Areas</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem">
+        <li style="color:rgba(255,255,255,.5);font-size:.875rem">Stone Oak</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.875rem">Alamo Heights</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.875rem">Boerne &amp; Helotes</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.875rem">Schertz &amp; Cibolo</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.875rem">New Braunfels</li>
+        <li style="color:rgba(255,255,255,.5);font-size:.875rem">Greater San Antonio</li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:2105550300">(210) 555-0300</a></li>
-        <li><a href="mailto:info@lonestarhvac.com">info@lonestarhvac.com</a></li>
-        <li><a href="#">San Antonio, TX 78201</a></li>
-        <li><a href="#">Mon-Fri 7am-7pm</a></li>
-        <li><a href="#">Sat 8am-5pm</a></li>
-        <li><a href="tel:2105550300">24/7 Emergency Line</a></li>
-      </ul>
+    <div>
+      <h4 style="color:var(--white);font-family:'Lato',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem">Contact</h4>
+      <div style="display:flex;flex-direction:column;gap:.75rem">
+        <a href="tel:+12105550300" style="color:var(--orange);text-decoration:none;font-size:1.1rem;font-weight:700">(210) 555-0300</a>
+        <div style="color:rgba(255,255,255,.5);font-size:.875rem">24/7 Emergency Line</div>
+        <a href="mailto:hello@lonestar-hvac.com" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.875rem">hello@lonestar-hvac.com</a>
+        <div style="color:rgba(255,255,255,.5);font-size:.875rem">San Antonio, TX 78201</div>
+        <button class="btn-orange" style="margin-top:.5rem;width:fit-content" onclick="openModal()">Book Service</button>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">&copy; 2026 Lone Star HVAC. All rights reserved.</p>
-    <div class="footer-legal">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Sitemap</a>
-    </div>
+  <div style="border-top:1px solid rgba(255,255,255,.06);margin-top:3rem;padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <p style="color:rgba(255,255,255,.3);font-size:.8rem">&copy; 2026 Lone Star HVAC. All rights reserved. Licensed Texas HVAC Contractor.</p>
+    <div style="display:flex;gap:1rem"><a href="#" style="color:rgba(255,255,255,.3);font-size:.8rem;text-decoration:none">Privacy Policy</a><a href="#" style="color:rgba(255,255,255,.3);font-size:.8rem;text-decoration:none">Terms of Service</a></div>
   </div>
 </footer>
 
 <!-- BOOKING MODAL -->
-<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
-  <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div id="modal-body">
-      <!-- Step 1 -->
-      <div id="step-1">
-        <div class="modal-header">
-          <h2>Book Your Service</h2>
-          <p>Step 1 of 3 &mdash; Select a service</p>
-        </div>
-        <div class="modal-steps">
-          <div class="modal-step-dot active"></div>
-          <div class="modal-step-dot"></div>
-          <div class="modal-step-dot"></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">What do you need?</label>
-          <div class="service-options">
-            <label class="service-option-label">
-              <input type="radio" name="service" value="AC Repair" checked>
-              <span class="service-option-name">AC Repair</span>
-              <span class="service-option-price">Starting at $89</span>
-            </label>
-            <label class="service-option-label">
-              <input type="radio" name="service" value="Heating Repair">
-              <span class="service-option-name">Heating Repair</span>
-              <span class="service-option-price">Starting at $99</span>
-            </label>
-            <label class="service-option-label">
-              <input type="radio" name="service" value="New Installation">
-              <span class="service-option-name">New Installation</span>
-              <span class="service-option-price">Custom Quote</span>
-            </label>
-            <label class="service-option-label">
-              <input type="radio" name="service" value="Tune-Up">
-              <span class="service-option-name">Tune-Up</span>
-              <span class="service-option-price">Starting at $79</span>
-            </label>
-            <label class="service-option-label">
-              <input type="radio" name="service" value="Duct Cleaning">
-              <span class="service-option-name">Duct Cleaning</span>
-              <span class="service-option-price">Starting at $299</span>
-            </label>
-            <label class="service-option-label">
-              <input type="radio" name="service" value="Commercial">
-              <span class="service-option-name">Commercial</span>
-              <span class="service-option-price">Custom Quote</span>
-            </label>
-          </div>
-        </div>
-        <div class="modal-nav">
-          <button class="btn-modal-next" style="flex:1" onclick="goToStep(2)">Next &rarr;</button>
-        </div>
+<div id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="modal-title">Book HVAC Service</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close booking modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="step-indicators" aria-hidden="true">
+        <div class="step-dot active" id="dot-1"></div>
+        <div class="step-dot" id="dot-2"></div>
+        <div class="step-dot" id="dot-3"></div>
       </div>
-      <!-- Step 2 -->
-      <div id="step-2" style="display:none">
-        <div class="modal-header">
-          <h2>Your Details</h2>
-          <p>Step 2 of 3 &mdash; Contact information</p>
+      <div class="step-panel active" id="step-1">
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.25rem">Step 1 of 3 &mdash; Select a service</p>
+        <div class="svc-options" role="group" aria-label="Select service">
+          <div class="svc-option" role="button" tabindex="0" data-service="AC Repair" data-price="$89+" onclick="selectService(this)" onkeydown="if(event.key==='Enter')selectService(this)"><span class="svc-opt-name">AC Repair</span><span class="svc-opt-price">$89+</span></div>
+          <div class="svc-option" role="button" tabindex="0" data-service="Heating Repair" data-price="$99+" onclick="selectService(this)" onkeydown="if(event.key==='Enter')selectService(this)"><span class="svc-opt-name">Heating Repair</span><span class="svc-opt-price">$99+</span></div>
+          <div class="svc-option" role="button" tabindex="0" data-service="New Installation" data-price="Custom" onclick="selectService(this)" onkeydown="if(event.key==='Enter')selectService(this)"><span class="svc-opt-name">New Installation</span><span class="svc-opt-price">Custom Quote</span></div>
+          <div class="svc-option" role="button" tabindex="0" data-service="Tune-Up" data-price="$79" onclick="selectService(this)" onkeydown="if(event.key==='Enter')selectService(this)"><span class="svc-opt-name">Tune-Up</span><span class="svc-opt-price">$79</span></div>
+          <div class="svc-option" role="button" tabindex="0" data-service="Duct Cleaning" data-price="$299+" onclick="selectService(this)" onkeydown="if(event.key==='Enter')selectService(this)"><span class="svc-opt-name">Duct Cleaning</span><span class="svc-opt-price">$299+</span></div>
+          <div class="svc-option" role="button" tabindex="0" data-service="Commercial" data-price="Custom" onclick="selectService(this)" onkeydown="if(event.key==='Enter')selectService(this)"><span class="svc-opt-name">Commercial</span><span class="svc-opt-price">Custom Quote</span></div>
         </div>
-        <div class="modal-steps">
-          <div class="modal-step-dot active"></div>
-          <div class="modal-step-dot active"></div>
-          <div class="modal-step-dot"></div>
-        </div>
+        <p id="svc-error" style="color:#fb923c;font-size:.8rem;margin-top:.5rem;display:none">Please select a service to continue.</p>
+        <div class="modal-footer-btns"><button class="btn-orange" onclick="goStep(2)">Next &rarr;</button></div>
+      </div>
+      <div class="step-panel" id="step-2">
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.25rem">Step 2 of 3 &mdash; Your information</p>
         <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">First Name</label>
-            <input class="form-input" type="text" id="first-name" placeholder="Jane" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Last Name</label>
-            <input class="form-input" type="text" id="last-name" placeholder="Smith" required>
-          </div>
+          <div class="form-group"><label for="f-first">First Name *</label><input type="text" id="f-first" name="firstName" autocomplete="given-name" required></div>
+          <div class="form-group"><label for="f-last">Last Name *</label><input type="text" id="f-last" name="lastName" autocomplete="family-name" required></div>
         </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input class="form-input" type="tel" id="phone" placeholder="(210) 555-0000" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input class="form-input" type="email" id="email" placeholder="jane@example.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Address / ZIP Code</label>
-          <input class="form-input" type="text" id="address" placeholder="123 Main St, San Antonio, TX 78201">
-        </div>
-        <!-- Honeypot -->
-        <input class="form-input honeypot" type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-        <div class="modal-nav">
-          <button class="btn-modal-back" onclick="goToStep(1)">&larr; Back</button>
-          <button class="btn-modal-next" onclick="goToStep(3)">Next &rarr;</button>
-        </div>
+        <div class="form-group"><label for="f-phone">Phone *</label><input type="tel" id="f-phone" name="phone" autocomplete="tel" required></div>
+        <div class="form-group"><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email"></div>
+        <div class="form-group"><label for="f-address">Service Address</label><input type="text" id="f-address" name="address" autocomplete="street-address"></div>
+        <div class="hp-field" aria-hidden="true"><label for="hp-website">Website</label><input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <p id="contact-error" style="color:#fb923c;font-size:.8rem;margin-top:.25rem;display:none">Please fill in required fields.</p>
+        <div class="modal-footer-btns"><button class="btn-prev" onclick="goStep(1)">&larr; Back</button><button class="btn-orange" onclick="goStep(3)">Next &rarr;</button></div>
       </div>
-      <!-- Step 3 -->
-      <div id="step-3" style="display:none">
-        <div class="modal-header">
-          <h2>Schedule It</h2>
-          <p>Step 3 of 3 &mdash; Pick your time</p>
+      <div class="step-panel" id="step-3">
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.25rem">Step 3 of 3 &mdash; Pick a time</p>
+        <div class="form-row">
+          <div class="form-group"><label for="f-date">Preferred Date *</label><input type="date" id="f-date" name="preferredDate" required></div>
+          <div class="form-group"><label for="f-time">Preferred Time</label><select id="f-time" name="preferredTime"><option value="">Any time</option><option>Morning (8am-12pm)</option><option>Afternoon (12pm-5pm)</option><option>Evening (5pm-8pm)</option></select></div>
         </div>
-        <div class="modal-steps">
-          <div class="modal-step-dot active"></div>
-          <div class="modal-step-dot active"></div>
-          <div class="modal-step-dot active"></div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Preferred Date</label>
-          <input class="form-input" type="date" id="pref-date">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Preferred Time</label>
-          <select class="form-select" id="pref-time">
-            <option value="">Select a time window</option>
-            <option>Morning (7am &ndash; 11am)</option>
-            <option>Midday (11am &ndash; 2pm)</option>
-            <option>Afternoon (2pm &ndash; 5pm)</option>
-            <option>Evening (5pm &ndash; 7pm)</option>
-            <option>Emergency &mdash; ASAP</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Additional Notes</label>
-          <input class="form-input" type="text" id="notes" placeholder="Any details about the issue...">
-        </div>
-        <div class="modal-nav">
-          <button class="btn-modal-back" onclick="goToStep(2)">&larr; Back</button>
-          <button class="btn-modal-next" onclick="submitForm()">Confirm Booking &rarr;</button>
-        </div>
+        <div class="form-group"><label for="f-notes">Notes / Problem Description</label><textarea id="f-notes" name="notes" rows="3" style="resize:vertical" placeholder="Describe the issue or any details that would help our technician..."></textarea></div>
+        <p id="schedule-error" style="color:#fb923c;font-size:.8rem;margin-top:.25rem;display:none">Please select a preferred date.</p>
+        <div class="modal-footer-btns"><button class="btn-prev" onclick="goStep(2)">&larr; Back</button><button class="btn-orange" id="submit-btn" onclick="submitForm()">Confirm Booking &rarr;</button></div>
       </div>
-      <!-- Success -->
-      <div id="step-success" style="display:none">
-        <div class="success-state">
-          <div class="success-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
+      <div class="step-panel" id="step-success">
+        <div class="success-msg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
           <h3>You&rsquo;re All Set!</h3>
-          <p>We&rsquo;ve received your booking request. A Lone Star HVAC team member will call you within 60 minutes to confirm your appointment.<br><br>For immediate assistance call <a href="tel:2105550300" style="color:var(--orange)">(210) 555-0300</a>.</p>
+          <p>We&rsquo;ve received your request and will call you within 30 minutes to confirm your appointment. For urgent emergencies, call <a href="tel:+12105550300" style="color:var(--orange)">(210) 555-0300</a> now.</p>
         </div>
       </div>
     </div>
@@ -1632,126 +934,187 @@ footer{
 </div>
 
 <script>
-// Rate limiting
-let lastSubmit = 0;
+(function(){
+  'use strict';
+  const RATE_LIMIT_MS = 30000;
+  let lastSubmit = 0;
 
-function openModal() {
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('modal-overlay')) closeModal();
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
-
-function goToStep(n) {
-  [1,2,3,'success'].forEach(function(s) {
-    var el = document.getElementById('step-' + s);
-    if (el) el.style.display = 'none';
-  });
-  var target = document.getElementById('step-' + n);
-  if (target) target.style.display = 'block';
-}
-
-async function submitForm() {
-  // Honeypot check
-  if (document.getElementById('website').value) return;
-  // Rate limit: 1 submission per 60s
-  var now = Date.now();
-  if (now - lastSubmit < 60000) {
-    alert('Please wait before submitting again.');
-    return;
+  const closeBannerBtn = document.getElementById('close-banner');
+  const emergencyBanner = document.getElementById('emergency-banner');
+  if(closeBannerBtn && emergencyBanner){
+    closeBannerBtn.addEventListener('click', function(){
+      emergencyBanner.style.display = 'none';
+      updateNavTop();
+    });
   }
-  lastSubmit = now;
 
-  var service = document.querySelector('input[name="service"]:checked');
-  var payload = {
-    service: service ? service.value : '',
-    firstName: document.getElementById('first-name').value,
-    lastName: document.getElementById('last-name').value,
-    phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value,
-    address: document.getElementById('address').value,
-    date: document.getElementById('pref-date').value,
-    time: document.getElementById('pref-time').value,
-    notes: document.getElementById('notes').value,
-    source: 'Lone Star HVAC Website'
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if(hamburger && navLinks){
+    hamburger.addEventListener('click', function(){
+      const open = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  }
+
+  const nav = document.getElementById('main-nav');
+  function updateNavTop(){
+    const bannerH = emergencyBanner && emergencyBanner.style.display !== 'none'
+      ? emergencyBanner.offsetHeight : 0;
+    if(nav) nav.style.top = bannerH + 'px';
+  }
+  updateNavTop();
+  window.addEventListener('resize', updateNavTop);
+
+  function animateCount(el){
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const decimal = parseInt(el.dataset.decimal || '0');
+    const duration = 1800;
+    const start = performance.now();
+    function step(now){
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = target * ease;
+      el.textContent = (decimal > 0 ? current.toFixed(decimal) : Math.floor(current)) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+
+  document.querySelectorAll('.reveal').forEach(function(el, i){
+    el.style.transitionDelay = (i % 6 * 100) + 'ms';
+    revealObserver.observe(el);
+  });
+
+  const statObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.querySelectorAll('[data-target]').forEach(animateCount);
+        statObserver.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.3});
+
+  const statsSection = document.getElementById('stats');
+  if(statsSection) statObserver.observe(statsSection);
+
+  const dateInput = document.getElementById('f-date');
+  if(dateInput){
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const dd = String(today.getDate()).padStart(2,'0');
+    dateInput.min = yyyy+'-'+mm+'-'+dd;
+  }
+
+  let currentStep = 1;
+  let selectedService = '';
+  let selectedPrice = '';
+
+  window.openModal = function(){
+    const modal = document.getElementById('booking-modal');
+    if(modal){
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      goStep(1);
+    }
   };
 
-  try {
-    await fetch('YOUR_GHL_WEBHOOK_URL', {
+  window.closeModal = function(){
+    const modal = document.getElementById('booking-modal');
+    if(modal){
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  document.getElementById('booking-modal').addEventListener('click', function(e){
+    if(e.target === this) window.closeModal();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') window.closeModal();
+  });
+
+  window.selectService = function(el){
+    document.querySelectorAll('.svc-option').forEach(function(o){ o.classList.remove('selected'); });
+    el.classList.add('selected');
+    selectedService = el.dataset.service;
+    selectedPrice = el.dataset.price;
+    document.getElementById('svc-error').style.display = 'none';
+  };
+
+  window.goStep = function(step){
+    if(step === 2 && currentStep === 1){
+      if(!selectedService){ document.getElementById('svc-error').style.display = 'block'; return; }
+    }
+    if(step === 3 && currentStep === 2){
+      const first = document.getElementById('f-first').value.trim();
+      const last = document.getElementById('f-last').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const err = document.getElementById('contact-error');
+      if(!first || !last || !phone){ err.style.display = 'block'; return; }
+      err.style.display = 'none';
+    }
+    currentStep = step;
+    document.querySelectorAll('.step-panel').forEach(function(p){ p.classList.remove('active'); });
+    const panel = document.getElementById('step-' + step);
+    if(panel) panel.classList.add('active');
+    for(let i=1;i<=3;i++){
+      const dot = document.getElementById('dot-'+i);
+      if(dot) dot.classList.toggle('active', i <= step);
+    }
+  };
+
+  window.submitForm = function(){
+    const now = Date.now();
+    if(now - lastSubmit < RATE_LIMIT_MS){ alert('Please wait a moment before submitting again.'); return; }
+    const hp = document.getElementById('hp-website');
+    if(hp && hp.value.trim()) return;
+    const dateVal = document.getElementById('f-date').value;
+    if(!dateVal){ document.getElementById('schedule-error').style.display = 'block'; return; }
+    document.getElementById('schedule-error').style.display = 'none';
+    const payload = {
+      service: selectedService, price: selectedPrice,
+      firstName: document.getElementById('f-first').value.trim(),
+      lastName: document.getElementById('f-last').value.trim(),
+      phone: document.getElementById('f-phone').value.trim(),
+      email: document.getElementById('f-email').value.trim(),
+      address: document.getElementById('f-address').value.trim(),
+      preferredDate: dateVal,
+      preferredTime: document.getElementById('f-time').value,
+      notes: document.getElementById('f-notes').value.trim(),
+      submittedAt: new Date().toISOString(),
+    };
+    const btn = document.getElementById('submit-btn');
+    if(btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
+    fetch('YOUR_GHL_WEBHOOK_URL', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload)
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload),
+    })
+    .catch(function(){})
+    .finally(function(){
+      lastSubmit = Date.now();
+      document.querySelectorAll('.step-panel').forEach(function(p){ p.classList.remove('active'); });
+      const success = document.getElementById('step-success');
+      if(success) success.classList.add('active');
+      document.querySelector('.step-indicators').style.display = 'none';
     });
-  } catch(e) {
-    // Silent fail — still show success
-  }
+  };
 
-  goToStep('success');
-}
-
-// COUNT-UP ANIMATION
-function animateCount(el) {
-  var target = parseFloat(el.dataset.target);
-  var suffix = el.dataset.suffix || '';
-  var isDecimal = el.dataset.decimal === 'true';
-  var duration = 1800;
-  var start = performance.now();
-  function update(now) {
-    var elapsed = now - start;
-    var progress = Math.min(elapsed / duration, 1);
-    var ease = 1 - Math.pow(1 - progress, 3);
-    var value = target * ease;
-    el.textContent = (isDecimal ? value.toFixed(1) : Math.floor(value).toLocaleString()) + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  requestAnimationFrame(update);
-}
-
-// INTERSECTION OBSERVER
-var io = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, {threshold: 0.12});
-
-document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-
-// STAT COUNT-UP
-var statsObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('[data-target]').forEach(animateCount);
-      statsObserver.unobserve(entry.target);
-    }
-  });
-}, {threshold: 0.3});
-
-var statsBar = document.querySelector('.stats-bar');
-if (statsBar) statsObserver.observe(statsBar);
-
-// Set minimum date for date picker
-var dateInput = document.getElementById('pref-date');
-if (dateInput) {
-  var today = new Date();
-  var yyyy = today.getFullYear();
-  var mm = String(today.getMonth()+1).padStart(2,'0');
-  var dd = String(today.getDate()).padStart(2,'0');
-  dateInput.min = yyyy+'-'+mm+'-'+dd;
-}
+})();
 </script>
 </body>
 </html>
