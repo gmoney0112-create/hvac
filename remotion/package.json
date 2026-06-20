@@ -1,0 +1,24 @@
+{
+  "name": "lone-star-hvac-video",
+  "version": "1.0.0",
+  "description": "Remotion video production for Lone Star HVAC — San Antonio",
+  "scripts": {
+    "start": "npx remotion studio src/index.ts",
+    "build": "vite build",
+    "render": "npx remotion render src/index.ts LoneStarPromo out/lonestar-promo.mp4",
+    "render:short": "npx remotion render src/index.ts LoneStarShort out/lonestar-short.mp4",
+    "render:still": "npx remotion still src/index.ts LoneStarPromo out/thumbnail.png --frame=30",
+    "preview": "npx remotion studio"
+  },
+  "dependencies": {
+    "@remotion/player": "^4.0.290",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.290"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

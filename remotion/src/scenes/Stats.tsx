@@ -1,0 +1,46 @@
+import React from "react";
+import { interpolate, spring, useVideoConfig } from "remotion";
+
+const STATS = [
+  { value: 12, suffix: "+", label: "Years in San Antonio", icon: "🏆" },
+  { value: 214, suffix: "+", label: "5-Star Reviews", icon: "⭐" },
+  { value: 4.9, suffix: "★", label: "Google Rating", icon: "📊", isDecimal: true },
+  { value: 2, suffix: "hr", label: "Emergency Response", icon: "⚡" },
+];
+
+const CountUp: React.FC<{ target: number; localFrame: number; suffix: string; isDecimal?: boolean }> = ({ target, localFrame, suffix, isDecimal }) => {
+  const eased = interpolate(localFrame, [0, 60], [0, 1], { extrapolateRight: "clamp", easing: (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t });
+  const current = isDecimal ? (eased * target).toFixed(1) : Math.floor(interpolate(eased, [0, 1], [0, target])).toLocaleString();
+  return <span>{current}{suffix}</span>;
+};
+
+export const Stats: React.FC<{ localFrame: number }> = ({ localFrame }) => {
+  const { width, height } = useVideoConfig();
+  const fps = 30;
+  const bgOpacity = interpolate(localFrame, [0, 20], [0, 1], { extrapolateRight: "clamp" });
+  const titleSlide = spring({ fps, frame: localFrame, config: { damping: 12, stiffness: 80 } });
+  const titleY = interpolate(titleSlide, [0, 1], [-40, 0]);
+  return (
+    <div style={{ width, height, background: "linear-gradient(135deg, #060d1a 0%, #0a1628 50%, #060d1a 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: bgOpacity, position: "relative", overflow: "hidden" }}>
+      <div style={{ opacity: interpolate(localFrame, [0, 15], [0, 1], { extrapolateRight: "clamp" }), transform: `translateY(${titleY}px)`, marginBottom: 60, textAlign: "center" }}>
+        <div style={{ fontSize: 16, color: "#c9a84c", letterSpacing: 8, textTransform: "uppercase", fontFamily: "Arial, sans-serif", marginBottom: 8 }}>BY THE NUMBERS</div>
+        <div style={{ fontSize: 56, fontWeight: 900, fontFamily: "'Arial Black', sans-serif", color: "#ffffff" }}>San Antonio's #1 HVAC</div>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 280px)", gap: 30 }}>
+        {STATS.map((stat, i) => {
+          const cardFrame = Math.max(0, localFrame - i * 15);
+          const cardSpring = spring({ fps, frame: cardFrame, config: { damping: 12, stiffness: 100 } });
+          return (
+            <div key={i} style={{ background: "linear-gradient(135deg, rgba(20,35,60,0.9), rgba(10,22,40,0.95))", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 20, padding: "40px 30px", textAlign: "center", transform: `scale(${interpolate(cardSpring, [0, 1], [0.7, 1])})`, opacity: interpolate(cardFrame, [0, 20], [0, 1], { extrapolateRight: "clamp" }), boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
+              <div style={{ fontSize: 42, marginBottom: 12 }}>{stat.icon}</div>
+              <div style={{ fontSize: 52, fontWeight: 900, fontFamily: "'Arial Black', sans-serif", color: "#c9a84c", lineHeight: 1, textShadow: "0 0 20px rgba(201,168,76,0.5)" }}>
+                <CountUp target={stat.value} localFrame={cardFrame} suffix={stat.suffix} isDecimal={stat.isDecimal} />
+              </div>
+              <div style={{ fontSize: 16, color: "#b8a070", marginTop: 10, fontFamily: "Arial, sans-serif", textTransform: "uppercase", letterSpacing: 2 }}>{stat.label}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
