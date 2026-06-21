@@ -1,5 +1,5 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, OffthreadVideo, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { AnimatedText } from "../components/AnimatedText";
 
 const SERVICES = [
@@ -39,16 +39,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, activeIndex }
 
 export const Services: React.FC<{ localFrame: number }> = ({ localFrame }) => {
   const { width, height } = useVideoConfig();
-  const activeIndex = Math.min(3, Math.floor(localFrame / 50));
+  const activeIndex = Math.min(3, Math.floor(localFrame / 150));
   const bgOpacity = interpolate(localFrame, [0, 20], [0, 1], { extrapolateRight: "clamp" });
   return (
     <div style={{ width, height, background: "radial-gradient(ellipse at 20% 50%, #091428 0%, #040914 70%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: bgOpacity, position: "relative", overflow: "hidden" }}>
-      <div style={{ marginBottom: 40, textAlign: "center" }}>
+      <OffthreadVideo src={staticFile("footage/scene2.mp4")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", opacity: 0.28 }} muted />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 20% 50%, rgba(9,20,40,0.84) 0%, rgba(4,9,20,0.9) 70%)" }} />
+      <div style={{ marginBottom: 40, textAlign: "center", position: "relative", zIndex: 2 }}>
         <AnimatedText text="OUR SERVICES" delay={5} animationType="slide-up" style={{ fontSize: 16, fontFamily: "Arial, sans-serif", color: "#c9a84c", letterSpacing: 8, textTransform: "uppercase", marginBottom: 8 }} />
         <AnimatedText text="Heating & Cooling Done Right" delay={15} animationType="slide-up" style={{ fontSize: 52, fontWeight: 900, fontFamily: "'Arial Black', sans-serif", color: "#ffffff" }} />
       </div>
-      <div>{SERVICES.map((service, i) => <ServiceCard key={i} service={service} index={i} activeIndex={activeIndex} />)}</div>
-      <div style={{ display: "flex", gap: 12, marginTop: 30 }}>
+      <div style={{ position: "relative", zIndex: 2 }}>{SERVICES.map((service, i) => <ServiceCard key={i} service={service} index={i} activeIndex={activeIndex} />)}</div>
+      <div style={{ display: "flex", gap: 12, marginTop: 30, position: "relative", zIndex: 2 }}>
         {SERVICES.map((s, i) => <div key={i} style={{ width: i === activeIndex ? 32 : 10, height: 10, borderRadius: 5, background: i <= activeIndex ? s.accent : "rgba(255,255,255,0.15)" }} />)}
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { interpolate, spring, useVideoConfig } from "remotion";
+import { interpolate, OffthreadVideo, spring, staticFile, useVideoConfig } from "remotion";
 
 const STATS = [
   { value: 12, suffix: "+", label: "Years in San Antonio", icon: "🏆" },
@@ -9,7 +9,7 @@ const STATS = [
 ];
 
 const CountUp: React.FC<{ target: number; localFrame: number; suffix: string; isDecimal?: boolean }> = ({ target, localFrame, suffix, isDecimal }) => {
-  const eased = interpolate(localFrame, [0, 60], [0, 1], { extrapolateRight: "clamp", easing: (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t });
+  const eased = interpolate(localFrame, [0, 90], [0, 1], { extrapolateRight: "clamp", easing: (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t });
   const current = isDecimal ? (eased * target).toFixed(1) : Math.floor(interpolate(eased, [0, 1], [0, target])).toLocaleString();
   return <span>{current}{suffix}</span>;
 };
@@ -22,13 +22,15 @@ export const Stats: React.FC<{ localFrame: number }> = ({ localFrame }) => {
   const titleY = interpolate(titleSlide, [0, 1], [-40, 0]);
   return (
     <div style={{ width, height, background: "linear-gradient(135deg, #060d1a 0%, #0a1628 50%, #060d1a 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: bgOpacity, position: "relative", overflow: "hidden" }}>
-      <div style={{ opacity: interpolate(localFrame, [0, 15], [0, 1], { extrapolateRight: "clamp" }), transform: `translateY(${titleY}px)`, marginBottom: 60, textAlign: "center" }}>
+      <OffthreadVideo src={staticFile("footage/scene3.mp4")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", opacity: 0.28 }} muted />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(6,13,26,0.84) 0%, rgba(10,22,40,0.8) 50%, rgba(6,13,26,0.84) 100%)" }} />
+      <div style={{ opacity: interpolate(localFrame, [0, 15], [0, 1], { extrapolateRight: "clamp" }), transform: `translateY(${titleY}px)`, marginBottom: 60, textAlign: "center", position: "relative", zIndex: 2 }}>
         <div style={{ fontSize: 16, color: "#c9a84c", letterSpacing: 8, textTransform: "uppercase", fontFamily: "Arial, sans-serif", marginBottom: 8 }}>BY THE NUMBERS</div>
         <div style={{ fontSize: 56, fontWeight: 900, fontFamily: "'Arial Black', sans-serif", color: "#ffffff" }}>San Antonio's #1 HVAC</div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 280px)", gap: 30 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 280px)", gap: 30, position: "relative", zIndex: 2 }}>
         {STATS.map((stat, i) => {
-          const cardFrame = Math.max(0, localFrame - i * 15);
+          const cardFrame = Math.max(0, localFrame - i * 20);
           const cardSpring = spring({ fps, frame: cardFrame, config: { damping: 12, stiffness: 100 } });
           return (
             <div key={i} style={{ background: "linear-gradient(135deg, rgba(20,35,60,0.9), rgba(10,22,40,0.95))", border: "1px solid rgba(201,168,76,0.25)", borderRadius: 20, padding: "40px 30px", textAlign: "center", transform: `scale(${interpolate(cardSpring, [0, 1], [0.7, 1])})`, opacity: interpolate(cardFrame, [0, 20], [0, 1], { extrapolateRight: "clamp" }), boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>

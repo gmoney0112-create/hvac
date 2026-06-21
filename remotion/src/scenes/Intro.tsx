@@ -1,5 +1,5 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, OffthreadVideo, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { AnimatedText } from "../components/AnimatedText";
 import { HVACDeco } from "../components/HVACDeco";
 
@@ -12,18 +12,19 @@ export const Intro: React.FC = () => {
   const logoOpacity = interpolate(frame, [20, 45], [0, 1], { extrapolateRight: "clamp" });
   const lineWidth = interpolate(frame, [40, 80], [0, 320], { extrapolateRight: "clamp" });
   const pulseGlow = Math.sin(frame * 0.08) * 0.3 + 0.7;
-
   return (
     <div style={{ width, height, background: "radial-gradient(ellipse at 50% 50%, #0d1e3c 0%, #060d1a 60%, #020609 100%)", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: bgOpacity }}>
+      <OffthreadVideo src={staticFile("footage/scene1.mp4")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", opacity: 0.3 }} muted />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 50%, rgba(13,30,60,0.8) 0%, rgba(6,13,26,0.88) 60%, rgba(2,6,9,0.94) 100%)" }} />
       <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <HVACDeco frame={frame} width={width} height={height} />
-      <div style={{ transform: `scale(${logoScale})`, opacity: logoOpacity, textAlign: "center", zIndex: 10 }}>
+      <div style={{ transform: `scale(${logoScale})`, opacity: logoOpacity, textAlign: "center", zIndex: 10, position: "relative" }}>
         <div style={{ fontSize: 80, marginBottom: 10, filter: `drop-shadow(0 0 30px rgba(201,168,76,${pulseGlow}))` }}>⭐</div>
         <div style={{ fontSize: 78, fontWeight: 900, fontFamily: "'Arial Black', sans-serif", color: "#ffffff", letterSpacing: -2, textShadow: "0 0 40px rgba(201,168,76,0.6)" }}>LONE <span style={{ color: "#c9a84c" }}>STAR</span></div>
         <div style={{ fontSize: 26, fontFamily: "Arial, sans-serif", color: "#e8cc7e", letterSpacing: 10, textTransform: "uppercase", marginTop: 6 }}>HVAC</div>
       </div>
-      <div style={{ width: lineWidth, height: 3, background: "linear-gradient(90deg, transparent, #c9a84c, #e8cc7e, transparent)", borderRadius: 2, marginTop: 30, boxShadow: "0 0 15px #c9a84c", zIndex: 10 }} />
-      <div style={{ marginTop: 20, zIndex: 10 }}>
+      <div style={{ width: lineWidth, height: 3, background: "linear-gradient(90deg, transparent, #c9a84c, #e8cc7e, transparent)", borderRadius: 2, marginTop: 30, boxShadow: "0 0 15px #c9a84c", zIndex: 10, position: "relative" }} />
+      <div style={{ marginTop: 20, zIndex: 10, position: "relative" }}>
         <AnimatedText text="San Antonio's Trusted Heating & Cooling" delay={70} animationType="fade-in" style={{ fontSize: 24, fontFamily: "Arial, sans-serif", color: "#b8a070", letterSpacing: 2 }} />
       </div>
     </div>
